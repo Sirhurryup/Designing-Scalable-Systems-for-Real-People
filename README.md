@@ -45,6 +45,7 @@ This work focuses on:
 ***Failure Testing:*** 
 - Broken permissions
 - Access denial scenarios
+---
 
 ### Scenarios Web Application 
 ***Focus:*** High Availability and performance 
@@ -61,6 +62,7 @@ This work focuses on:
 ***Failure Testing:***
 - Instance crash
 - Traffic spikes
+---
 
 ### Event-Driven System 
 ***Focus:*** Automation and asynchornous workflows 
@@ -77,6 +79,7 @@ This work focuses on:
 ***Failure Testing:*** 
 - Trigger failures
 - Silent systems breakdowns
+---
 
 ## UX/UI Case Studies 
 These projects explore how users interact with complex systems. 
