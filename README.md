@@ -47,30 +47,34 @@ This work focuses on:
 - Access denial scenarios
 
 ### Scenarios Web Application 
-Focus: High Availability and performance 
+***Focus:*** High Availability and performance 
 
-Cloud Concepts: 
-- EC2, Load Balancer, Auto Scaling
+***Cloud Concepts:*** 
+- EC2
+- Load Balancer
+- Auto Scaling
 
-UX Layer:
+***UX Layer:***
 - User experience during latency or downtime
 - Perceived versus actual performance
 
-Failure
+***Failure Testing:***
 - Instance crash
 - Traffic spikes
 
 ### Event-Driven System 
-Focus: Automation and asynchornous workflows 
+***Focus:*** Automation and asynchornous workflows 
 
-Cloud Concepts: 
-- S3, Lambda, event triggers
+***Cloud Concepts:*** 
+- S3
+- Lambda
+- Event triggers
 
-UX Layer: 
+***UX Layer:*** 
 - Invisible systems that still affect user trust
 - Feedback loops (notifications, confirmations)
 
-Failure Testing: 
+***Failure Testing:*** 
 - Trigger failures
 - Silent systems breakdowns
 
