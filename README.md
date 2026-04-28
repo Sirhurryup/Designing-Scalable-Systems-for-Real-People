@@ -27,7 +27,7 @@ This work focuses on:
 - Lessons Learned
 ---
 
-## Projects 
+## Projects [Go to Projects](projects/)
 
 ### IAM System Design 
 **Focus:** Identity, authentication, and authorization 
