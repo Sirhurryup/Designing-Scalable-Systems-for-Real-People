@@ -80,10 +80,33 @@ By configuring RDP securely, I demonstrated the ability to manage a broader rang
 
 ## Part 3: Complex (SSM Session Manager)
 
-### Objective 
+### Objective
+Eliminate direct SSH access by using AWS Systems Manager Session Manager to securely connect to EC2 instances without opening inbound ports.
 
-Eliminate the need for direct SSM access by using AWS Systems Manager Session Manager Session for secure, browser-based instance access. 
+---
 
-## Why This Matters 
+### What I Did
 
-Reducing open ports and eliminating direct SSH access strengthens security posture and aligns with modern cloud best practices.
+- Launched a Linux EC2 instance
+- Attached an IAM Role with Systems Manager permissions
+- Connected to the instance using **Session Manager** from the AWS Console
+- Created a file (`sirhurryup.txt`) using `vim` to validate system access
+- Verified identity using `whoami`
+- Switched user context from `ssm-user` to `ec2-user`
+- Removed inbound SSH (port 22) from the Security Group to eliminate direct access
+
+---
+
+### SSM Access
+
+- Used AWS Systems Manager → Session Manager to connect directly from the browser
+- No SSH key or open port required
+- Initial connection required proper IAM Role configuration
+
+---
+
+### Verification
+
+```bash
+whoami
+```
