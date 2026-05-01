@@ -98,6 +98,7 @@ Eliminate direct SSH access by using AWS Systems Manager Session Manager to secu
 ---
 
 ### SSM Access
+![SSM Role Requirement Warning](../../assets/project2/07-ssm-warning-role-required.png)
 
 - Used AWS Systems Manager → Session Manager to connect directly from the browser
 - No SSH key or open port required
@@ -106,6 +107,7 @@ Eliminate direct SSH access by using AWS Systems Manager Session Manager to secu
 ---
 
 ### Verification
+![SSM Terminal Session](../../assets/project2/09-ssm-terminal-session.png)
 
 ```bash
 whoami
@@ -124,13 +126,15 @@ ls
 cat sirhurryup.txt
 ```
 
-### Output 
+### Output
+![SSM File Verification](../../assets/project2/10-ssm-file-verification.png)
 
 - Confirmed access to home directory
 - Verified file creation (```sirhurryup.txt```)
 - Successfully accessed EC2 instance without SSH
 
-### Key Observartions 
+### Key Observartions
+![SSM Connection Delay](../../assets/project2/08-ssm-connecting-delay.png)
 
 - Session Manager requires an IAM Role to function properly
 - Connection delay can occure whil SSM initializes
