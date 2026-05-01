@@ -34,7 +34,7 @@ This work focuses on:
 ### Project 2: Secure Remote Access for Cloud Operations
 Demonstrates secure access to EC2 instances across Linux and Windows environments, evolving from SSH and RDP to a mordern, IAM-controlled access model using AWS Systems Manager. 
 
-[View Project →](projects/iam-systems/project2-secure-remote-access.md)
+[View Project →](./projects/iam-systems/project2-secure-remote-access.md)
 
 ### IAM System Design 
 **Focus:** Identity, authentication, and authorization 
