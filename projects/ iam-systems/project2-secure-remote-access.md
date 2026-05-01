@@ -39,6 +39,7 @@ Access is the first layer of control in any system. By limiting SSH access to a 
 Establish secure remote desktop access to a Windows EC2 instance to support graphical administration and enterprise workloads.
 
 ### What I Did
+![Windows EC2 Launch](../../assets/project2/04-windows-ec2-launch.png)
 
 - Launched a Windows EC2 instance
 - Created a key pair to decrypt the administrator password
@@ -50,6 +51,7 @@ Establish secure remote desktop access to a Windows EC2 instance to support grap
 ---
 
 ### RDP Access
+![RDP Security Group](../../assets/project2/05-rdp-security-group.png)
 
 - Downloaded the RDP file from AWS
 - Used the key pair to decrypt the administrator password
@@ -58,6 +60,7 @@ Establish secure remote desktop access to a Windows EC2 instance to support grap
 ---
 
 ### Verification
+![RDP Desktop Login](../../assets/project2/06-rdp-desktop-login.png)
 
 - Successfully logged into the Windows desktop environment
 - Confirmed full access to system interface and administrative tools
