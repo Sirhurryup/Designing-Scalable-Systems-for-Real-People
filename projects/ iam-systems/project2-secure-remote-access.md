@@ -34,6 +34,9 @@ ssh -i "aws-ec2-proj2-keypair.pem" ec2-user@<your-public-dns>
 
 ### Why This Matters 
 Access is the first layer of control in any system. By limiting SSH access to a specific IP, I reduced the attack surface while maintaining administrative control. 
+---
+
+## Part 2: Advanced (Windows EC2 + RDP)
 
 ### Objective
 Establish secure remote desktop access to a Windows EC2 instance to support graphical administration and enterprise workloads.
