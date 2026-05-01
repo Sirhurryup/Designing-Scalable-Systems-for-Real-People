@@ -110,3 +110,34 @@ Eliminate direct SSH access by using AWS Systems Manager Session Manager to secu
 ```bash
 whoami
 ```
+
+### Initial Output:
+
+```
+ssm-user
+```
+### Switched User 
+```
+sudo su ec2-user
+cd ~
+ls
+cat sirhurryup.txt
+```
+
+### Output 
+
+- Confirmed access to home directory
+- Verified file creation (```sirhurryup.txt```)
+- Successfully accessed EC2 instance without SSH
+
+### Key Observartions 
+
+- Session Manager requires an IAM Role to function properly
+- Connection delay can occure whil SSM initializes
+- Default session user is ```ssm-user```, not ```ec2-user```
+- SSH access can be fully removed without losing administrative control
+
+### Why This Matters 
+Traditional SSH access requires open ports, which increase the attack surface. By shifting to Session Manager, I eliminated inbound access requirements and moved to a model where access is controlled through IAM and audited through AWS. 
+
+This approach aligns with modern cloud security practices by reducing exposure while maintaining full administrative capability. 
