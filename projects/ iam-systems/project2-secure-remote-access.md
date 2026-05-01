@@ -35,23 +35,40 @@ ssh -i "aws-ec2-proj2-keypair.pem" ec2-user@<your-public-dns>
 ### Why This Matters 
 Access is the first layer of control in any system. By limiting SSH access to a specific IP, I reduced the attack surface while maintaining administrative control. 
 
-## Part 2 Advanced Windows (EC2 & Remote Desktop Protocol (RDP))
-
 ### Objective
-Establish secure remote desktop access to a Windows EC2 instance to support graphical administrartion and enterprise workloads. RDP enables full desktop access, making it easier to manage applications, troubeshoot issues, and support enterprise workflows.
+Establish secure remote desktop access to a Windows EC2 instance to support graphical administration and enterprise workloads.
+
+### What I Did
+
+- Launched a Windows EC2 instance
+- Created a key pair to decrypt the administrator password
+- Configured a Security Group to allow RDP (port 3389)
+- Restricted access to **my IP address** to reduce exposure
+- Retrieved the Windows administrator password using the key pair
+- Connected to the instance using Remote Desktop Protocol (RDP)
 
 ---
 
-### What I Will Do 
+### RDP Access
 
-- Launch a Windows EC2 instance
-- Configure a Security Group to allow RDP (port 3389)
-- Retrieve the Windows administrator password using the key pair
-- Connect to the instance using Remote Desktop Protocol
+- Downloaded the RDP file from AWS
+- Used the key pair to decrypt the administrator password
+- Connected to the Windows instance using Remote Desktop
 
-### Why This Matters 
+---
 
-Modern organizations rarely operate on a signle operating system. Supporting both Linux and Windows enviroments is critical for real-world cloud operations.
+### Verification
+
+- Successfully logged into the Windows desktop environment
+- Confirmed full access to system interface and administrative tools
+
+---
+
+### Why This Matters
+
+Not all systems are managed through the command line. Many enterprise environments rely on Windows-based infrastructure that requires graphical access.
+
+By configuring RDP securely, I demonstrated the ability to manage a broader range of systems while maintaining control over access through IP restrictions and encrypted authentication.
 
 ---
 
