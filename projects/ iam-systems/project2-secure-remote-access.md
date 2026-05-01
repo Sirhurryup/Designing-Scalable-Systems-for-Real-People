@@ -30,7 +30,7 @@ ssh -i "aws-ec2-proj2-keypair.pem" ec2-user@<your-public-dns>
 ```
 
 ### SSH Access + Verification + Output 
-![EC2 SSH Output](../../assets/project2-03-security-group-ssh-whoami.png)
+![EC2 SSH Output](../../assets/project2/03-security-group-ssh-whoami.png)
 
 ### Why This Matters 
 Access is the first layer of control in any system. By limiting SSH access to a specific IP, I reduced the attack surface while maintaining administrative control. 
