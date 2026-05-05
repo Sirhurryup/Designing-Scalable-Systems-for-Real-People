@@ -66,7 +66,7 @@ sudo vim index.html
 sudo systemctl restart httpd
 ```
 ### Result  
-![Custom HTML Page](../../assets/project3/03-custom-html-page.png)
+![Custom HTML Page](../../assets/project3/03-custom-html-page1.png)
 
 A custom landing page displyaing: 
 Welcome to Sirhurryup Corporation 
