@@ -14,6 +14,7 @@ This project focuses on deploying a web server using Amazon Linux and Apache, va
 Deploy a publicly accessible web server using Amazon Linux and Apache.
 
 ### What I Did
+![Apache Default Page](../../assets/project3/01-apache-default-page.png)
 
 - Launched an EC2 instance using Amazon Linux
 - Connected via SSH using key-based authentication
@@ -46,6 +47,7 @@ The AWS console link timed out, but manually entering the public IPv4 address us
 
 ## Shaping the Experience (Custom HTML)
 
+
 ### Objective 
 Control what users see when they access the web server. 
 
@@ -63,7 +65,8 @@ cd /var/www/html
 sudo vim index.html
 sudo systemctl restart httpd
 ```
-### Result 
+### Result  
+![Custom HTML Page](../../assets/project3/03-custom-html-page.png)
 
 A custom landing page displyaing: 
 Welcome to Sirhurryup Corporation 
@@ -82,6 +85,9 @@ Investigate system activity and identify potential issues using server logs.
 - Exported logs into organized files for analysis
 
 ### Commands Used 
+![Access Log Output](../../assets/project3/04-access-log.png)
+
+![Error Log Output](../../assets/project3/05-error-log.png)
 
 ```bash
 sudo su
@@ -96,6 +102,7 @@ tail -n 15 error_log > /home/ec2-user/logreview/error_log-$(date +%F).txt
 ```
 
 ### Output 
+![Log Files Created](../../assets/project3/06-log-files-created.png)
 
 - Verifiec access logs captured browser requests
 - Confirmed mininmal or no errors in error logs
