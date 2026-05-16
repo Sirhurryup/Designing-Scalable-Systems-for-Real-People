@@ -34,10 +34,10 @@ Built a role-based access model using IAM users, groups, and policies to establi
 
 [View Project →](./projects/%20iam-systems/project1-iam-user-access-management.md)
 
-### Project 2: Secure Remote Access for Cloud Operations
-Demonstrates secure access to EC2 instances across Linux and Windows environments, evolving from SSH and RDP to a mordern, IAM-controlled access model using AWS Systems Manager. 
+### Project 2: Secure Remote Access for Cloud Operations  
+Demonstrates secure access to EC2 instances across Linux and Windows environments, evolving from SSH and RDP to a modern IAM-controlled access model using AWS Systems Manager.
 
-[[View Project →](./projects/%20iam-systems/project1-iam-user-access-management.md)](https://github.com/Sirhurryup/Designing-Scalable-Systems-for-Real-People/blob/main/projects/%20iam-systems/project2-secure-remote-access.md)
+[View Project →](./projects/%20iam-systems/project2-secure-remote-access.md)
 
 ### Project 3: Bringing a Bank Online – Web Server Deployment & Log Analysis
 Built and deployed an Apache web server on Amazon Linux, created a custom user-facing experience, and analyzed system behavior through access and error logs. 
