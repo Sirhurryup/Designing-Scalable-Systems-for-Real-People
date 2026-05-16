@@ -86,19 +86,19 @@ Each request passes through IAM for authentication and authorization. IAM evalua
 
 ### IAM Dashboard
 
-![IAM Dashboard](../../assets/screenshots/iam-dashboard.png)
+![IAM Dashboard](../../assets/project1/iam-dashboard.png)
 
 ### IAM Groups
 
-![IAM Groups](../../assets/screenshots/iam-groups.png)
+![IAM Groups](../../assets/project1/iam-groups.png)
 
 ### User Creation and Group Assignment
 
-![User Creation](../../assets/screenshots/iam-user-created.png)
+![User Creation](../../assets/project1/iam-user-created.png)
 
 ### Policies Attached to Groups
 
-![Policies](../../assets/screenshots/iam-policy.png)
+![Policies](../../assets/project1/iam-policy.png)
 
 ---
 
