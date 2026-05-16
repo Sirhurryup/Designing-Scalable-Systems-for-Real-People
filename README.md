@@ -28,7 +28,11 @@ This work focuses on:
 ---
 
 ## Projects 
-### Project 1: 
+
+### Project 1: Designing Secure Access with AWS IAM  
+Built a role-based access model using IAM users, groups, and policies to establish a scalable security foundation for Sirhurryup Corporation.
+
+[View Project →](./projects/iam-systems/project1-iam-user-access-management.md)
 ---
 
 ### Project 2: Secure Remote Access for Cloud Operations
