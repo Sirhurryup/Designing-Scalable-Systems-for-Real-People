@@ -39,7 +39,7 @@ Demonstrates secure access to EC2 instances across Linux and Windows environment
 ### Project 3: Bringing a Bank Online – Web Server Deployment & Log Analysis
 Built and deployed an Apache web server on Amazon Linux, created a custom user-facing experience, and analyzed system behavior through access and error logs. 
 
-[View Project →](./projects/web-systems/project3-apache-webserve.md)  
+[View Project →](./projects/web-systems/project3-apache-webserver.md)
 
 
 ### IAM System Design 
