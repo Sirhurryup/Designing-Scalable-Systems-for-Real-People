@@ -66,26 +66,27 @@ Each user was able to access only their own department directory and received `P
 
 ---
 
-### Protecting Individual Privacy
+## Protecting Individual Privacy
 
-#### Objective
+### Objective
 Restrict home directory access so user cannot browse one another's personal files.
 
-#### What I Did
+### What I Did
 Applied `chmod 700`  to each user's home directory.
 
-#### Key Commands Used
-```
+### Key Commands Used
+
 chmod 700 /home/rescalon 
 chmod 700 /home/lvandross 
 chmod 700 /home/dross
-```
 
-#### Verification
+
+### Verification
 Logged in as `rescalon` and confirmed access to `/home/lvandross` and `/home/dross` was denied.
 
-#### Why This Matters
+### Why This Matters
 Home directories often contain:
+
 - SSH keys
 - shell history
 - configuration files
@@ -102,6 +103,7 @@ Convert the manual configuration into a reusable Bash script.
 
 ### What I Built
 Created `sirhurryup-access-control.sh`, which:
+
 - Creates directories
 - Creates files
 - Creates groups
@@ -111,17 +113,18 @@ Created `sirhurryup-access-control.sh`, which:
 - Secures home directories
 
 ### Execution
-```
+
 chmod +x sirhurryup-access-control.sh
 ./sirhurryup-access-control.sh
-```
 
 ### Result
+
 The entire environment can noe be recreated consistently with a signle command.
 
 ---
 
 ## Lessons Learned
+
 - Linus groups provide scalable access control
 - `chown` assigns ownership and group responsibiity
 - `chmod 770` enforces deppartment isolation
@@ -131,6 +134,7 @@ The entire environment can noe be recreated consistently with a signle command.
 ---
 
 ## Why This Project Matters
+
 This project demonstrates how business requirements become technical controls.
 
 The challenge was simple:
