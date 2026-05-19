@@ -65,6 +65,22 @@ chmod 770 /data-engineering
 
 Each user was able to access only their own department directory and received `Permission denied` when attempting to access the others.
 
+![Department Directories](../../assets/project4/01-directories-created.png)
+
+![Linux Groups Created](../../assets/project4/02-groups-created.png)
+
+![Department Files Created](../../assets/project4/03-department-files-created.png)
+
+![Users Created](../../assets/project4/04-users-created.png)
+
+![Directory Permissions](../../assets/project4/05-directory-permissions.png)
+
+![Raquel Access Verification](../../assets/project4/06-access-verification-rescalon.png)
+
+![Luther Access Verification](../../assets/project4/07-access-verification-lvandross.png)
+
+![Diana Access Verification](../../assets/project4/08-access-verification-dross.png)
+
 ---
 
 ## Protecting Individual Privacy
