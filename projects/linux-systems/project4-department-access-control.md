@@ -59,6 +59,7 @@ chown root:dataeng /data-engineering
 chmod 770 /platform
 chmod 770 /cloud-operations
 chmod 770 /data-engineering
+```
 
 ### Verification
 
