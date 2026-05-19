@@ -111,6 +111,10 @@ Home directories often contain:
 
 Restricting access protects sensitive information and supports user privacy.
 
+![Home Directory Privacy](../../assets/project4/09-home-directory-privacy.png)
+
+![Profile Privacy Verification](../../assets/project4/10-profile-privacy-verification.png)
+
 ---
 
 ## Automating the Access Model
@@ -137,6 +141,12 @@ chmod +x sirhurryup-access-control.sh
 ### Result
 
 The entire environment can noe be recreated consistently with a signle command.
+
+![Script Executable](../../assets/project4/11-script-executable.png)
+
+![Script Run Successfully](../../assets/project4/12-script-run-success.png)
+
+![Final Permission Verification](../../assets/project4/13-final-permission-verification.png)
 
 ---
 
