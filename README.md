@@ -44,6 +44,11 @@ Built and deployed an Apache web server on Amazon Linux, created a custom user-f
 
 [View Project →](./projects/web-systems/project3-apache-webserver.md)
 
+### Project 4: Building Department-Based Access Control in Linux  
+Designed a Linux-based least-privilege access model using users, groups, permissions, and Bash automation to secure departmental workspaces and protect individual user privacy.
+
+[View Project →](./projects/linux-systems/project4-department-access-control.md)
+
 
 ### IAM System Design 
 **Focus:** Identity, authentication, and authorization 
