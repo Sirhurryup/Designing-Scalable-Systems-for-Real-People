@@ -93,11 +93,11 @@ Applied `chmod 700`  to each user's home directory.
 
 ### Key Commands Used
 
-chmod 700 /home/rescalon 
+`chmod 700 /home/rescalon`
 
-chmod 700 /home/lvandross 
+`chmod 700 /home/lvandross` 
 
-chmod 700 /home/dross
+`chmod 700 /home/dross`
 
 
 ### Verification
@@ -137,12 +137,12 @@ Created `sirhurryup-access-control.sh`, which:
 
 ### Execution
 
-chmod +x sirhurryup-access-control.sh
-./sirhurryup-access-control.sh
+`chmod +x sirhurryup-access-control.sh`
+`./sirhurryup-access-control.sh`
 
 ### Result
 
-The entire environment can noe be recreated consistently with a signle command.
+The entire environment can now be recreated consistently with a signle command.
 
 ![Script Executable](../../assets/project4/11-script-executable.png)
 
@@ -154,11 +154,11 @@ The entire environment can noe be recreated consistently with a signle command.
 
 ## Lessons Learned
 
-- Linus groups provide scalable access control
+- Linux groups provide scalable access control
 - `chown` assigns ownership and group responsibiity
-- `chmod 770` enforces deppartment isolation
+- `chmod 770` enforces department isolation
 - `chmod 700` protects personal data
-- Automation transformss manual work into repeatable infastructure
+- Automation transforms manual work into repeatable infastructure
 
 ---
 
