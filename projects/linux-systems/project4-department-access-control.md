@@ -94,7 +94,9 @@ Applied `chmod 700`  to each user's home directory.
 ### Key Commands Used
 
 chmod 700 /home/rescalon 
+
 chmod 700 /home/lvandross 
+
 chmod 700 /home/dross
 
 
