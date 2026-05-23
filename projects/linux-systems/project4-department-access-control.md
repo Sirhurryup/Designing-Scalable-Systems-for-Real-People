@@ -75,7 +75,7 @@ Each user was able to access only their own department directory and received `P
 
 ![Directory Permissions](../../assets/project4/05-directory-permissions.png)
 
-![Raquel Access Verification](../../assets/project4/06-access-verification-rescalon.png)
+![Raquel Access Verification](../../assets/project4/06-access-verifcation-rescalon.png)
 
 ![Luther Access Verification](../../assets/project4/07-access-verification-lvandross.png)
 
