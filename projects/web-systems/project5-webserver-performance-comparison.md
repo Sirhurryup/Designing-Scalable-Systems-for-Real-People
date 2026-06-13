@@ -57,3 +57,43 @@ Each web server successfully delivered the Sirhurryup Corporation test page thro
 ![NGINX Localhost Test](../../assets/project5/09-nginx-curl-localhost.png)
 
 ![Lighttpd Localhost Test](../../assets/project5/13-lighttpd-curl-localhost.png)
+
+---
+
+## Comparing Web Server Response Times
+
+### Objective
+
+Measure how quickly each web server could respond to the same request while serving identical content.
+
+### Test Method
+
+Each server hosted the same Sirhurryup Corporation HTML page.
+
+Response times were measured using:
+
+time curl -s http://localhost > /dev/null
+
+The goal was not to simulate heavy traffic, but rather to establish a baseline comparison under minimal load.
+
+### Results
+
+| Web Server | Response Time|
+|------------|--------------|
+| Apache     | 0.008s |
+| NGINX      | 0.008s |
+| Lighttpd   | 0.008s |
+
+### Findings
+
+All three web servers delivered identical response times during testing.
+
+For a lightweight internal service, no meaningful performance difference was observed when measuring basic page delivery.
+
+This result reinforced the importance of testing assumptions rather than relying solely on reputation or community opinions.
+
+![Apache Response Time](../../assets/project5/06-apache-response-time.png)
+
+![NGINX Response Time](../../assets/project5/10-nginx-response-time.png)
+
+![Lighttpd Response Time](../../assets/project5/14-lighttpd-response-time.png)
