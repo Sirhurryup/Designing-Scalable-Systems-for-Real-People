@@ -97,3 +97,41 @@ This result reinforced the importance of testing assumptions rather than relying
 ![NGINX Response Time](../../assets/project5/10-nginx-response-time.png)
 
 ![Lighttpd Response Time](../../assets/project5/14-lighttpd-response-time.png)
+
+---
+
+## Measuring System Impact
+
+### Objective
+
+Evaluate how much CPU each web server consumed while serving the same workload.
+
+### Test Method
+
+CPU utilization was observed using:
+
+top
+
+The goal was to identify whether any server required noticeably more system resources than the others while delivering identical content.
+
+### Results
+
+| Web Server | CPU Observation |
+|------------|----------------|
+| Apache | 0.7 |
+| NGINX | 0.3 |
+| Lighttpd | 0.3 |
+
+### Findings
+
+All three servers delivered identical response times, but Apache showed slightly higher CPU utilization during testing.
+
+NGINX and Lighttpd demonstrated similar resource consumption and appeared more efficient under the conditions tested.
+
+Although the difference was small, the results suggest that NGINX and Lighttpd may provide advantages when resource efficiency is a priority.
+
+![Apache CPU Usage](../../assets/project5/07-apache-cpu-usage.png)
+
+![NGINX CPU Usage](../../assets/project5/11-nginx-cpu-usage.png)
+
+![Lighttpd CPU Usage](../../assets/project5/15-lighttpd-cpu-usage.png)
