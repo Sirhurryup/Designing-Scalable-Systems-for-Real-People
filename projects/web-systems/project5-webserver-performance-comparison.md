@@ -135,3 +135,47 @@ Although the difference was small, the results suggest that NGINX and Lighttpd m
 ![NGINX CPU Usage](../../assets/project5/11-nginx-cpu-usage.png)
 
 ![Lighttpd CPU Usage](../../assets/project5/15-lighttpd-cpu-usage.png)
+
+---
+
+## Reporting the Decision
+
+### Recommendation
+
+For lightweight internal services, all three web servers delivered identical response times during testing.
+
+NGINX and Lighttpd showed slightly lower CPU utilization than Apache. Based on these results, NGINX is the recommended choice for Sirhurryup Corporation because it combined low resource usage with broad industry adoption, strong community support, and proven performance.
+
+### Comparison Report
+
+To document the evaluation, I created a comparison report summarizing the testing environment, measurements, observations, and final recommendation.
+
+![Web Server Comparison Report](../../assets/project5/16-webserver-comparison-report.png)
+
+---
+
+## Lessons Learned
+
+- Performance decisions should be based on measurements rather than assumptions
+- Response time alone does not tell the complete story
+- Resource utilization is an important factor when evaluating infrastructure
+- Different technologies can produce similar results under lightweight workloads
+- Benchmarking provides evidence that supports technical recommendations
+
+---
+
+## Why This Project Matters
+
+This project was less about installing web servers and more about evaluating competing solutions.
+
+Rather than assuming one platform was better than another, I created a controlled testing environment, gathered performance data, and used the results to make a recommendation.
+
+The experience reinforced an important lesson that applies across cloud engineering, Linux administration, and infrastructure design:
+
+Good decisions are driven by evidence.
+
+Whether selecting a web server, designing a cloud architecture, or troubleshooting production systems, measurements provide a stronger foundation than assumptions.
+
+This project helped me practice that mindset while developing a deeper understanding of web infrastructure and performance evaluation.
+
+
