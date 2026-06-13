@@ -49,3 +49,9 @@ Designed a Linux-based least-privilege access model using users, groups, permiss
 
 [View Project →](./projects/linux-systems/project4-department-access-control.md)
 
+### Project 5: Evaluating Web Server Performance for Internal Services
+
+Compared Apache, NGINX, and Lighttpd using response time and CPU utilization measurements to determine the best web server for a lightweight internal service. Built a standardized testing environment and used evidence-based analysis to make a technical recommendation.
+
+[View Project →](./projects/web-systems/project5-webserver-performance-comparison.md)
+
