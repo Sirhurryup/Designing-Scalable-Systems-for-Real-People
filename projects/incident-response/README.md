@@ -8,19 +8,21 @@ Each incident follows a consistent investigation framework that reflects how I a
 
 ### 1. Buisness Challenge
 
-### 2. Objective
+### 2.Operational Context
 
-### 3. Containment
+### 3. Objective
 
-### 4. Investigation
+### 4. Containment
+
+### 5. Investigation
  - Evidence Collected
  - Impact Verified
 
-### 5. Eradication
+### 6. Eradication
 
-### 6. Recovery
+### 7. Recovery
 
-### 7. Business Impact
+### 8. Business Impact
 
-### 8. Investigator's Reflection
+### 9. Investigator's Reflection
 
