@@ -6,7 +6,7 @@ Building secure systems is only half the job. This collection demonstrates how I
 
 Each incident follows a consistent investigation framework that reflects how I approach cloud security events from initial detection through recovery.  
 
-### 1. Buisness Problem
+### 1. Buisness Challenge
 
 ### 2. Objective
 
