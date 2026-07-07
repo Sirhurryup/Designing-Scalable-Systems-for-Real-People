@@ -15,6 +15,13 @@ Technologies:
 
 # Protecting Criticial Payment Infrastructure Through Rapid Credential Containment
 
+# Project Title
+
+> **Engagement:** 01
+> **Client:** NorthBridge Financial
+> **Industry:** Financial Services
+> **Business Capability:** Credential Protection
+
 ## Business Problem
 
 We provide cloud engineering and managed security services for organizations operating business-critical workloads on Amazon Web Services (AWS).
