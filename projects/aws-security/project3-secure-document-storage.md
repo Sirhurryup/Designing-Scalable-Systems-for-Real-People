@@ -73,6 +73,24 @@ Next, we configured an automated lifecycle rule to transition objects to the Sta
 
 Each configuration was verified after implementation to confirm the storage platform met the client's security, operational, and business requirements.
 
+[EVIDENCE 01]
+Bucket creation.
+
+[EVIDENCE 02]
+Versioning enabled.
+
+[EVIDENCE 03]
+Lifecycle rule (90-day Standard-IA).
+
+[EVIDENCE 04]
+Block Public Access enabled.
+
+[EVIDENCE 05]
+Resource tags.
+
+[EVIDENCE 06]
+Final verification.
+
 ## Verification
 
 We verified that the Amazon S3 bucket was successfully provisioned using the approved production naming convention. Validation confirmed that Amazon S3 Versioning was enabled, the lifecycle rule transitioned objects to Standard-IA after 90 days, and all four Block Public Access settings were active.
