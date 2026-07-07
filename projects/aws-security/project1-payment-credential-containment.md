@@ -80,20 +80,35 @@ Next, we confirmed that the service account did not have AWS Management Console 
 
 Throughout the engagement, every remediation step was validated before proceeding to the next phase to ensure the client's payment platform remained secure while preserving evidence for future analysis.
 
-[EVIDENCE 01]
-IAM user showing compromised access key.
+### Active IAM Access Key
 
-[EVIDENCE 02]
-Access key disabled.
+![Active IAM Access Key](../../assets/project1/evidence-01-active-access-key.png)
 
-[EVIDENCE 03]
-Access key deleted.
+The IAM user initially contained an active programmatic access key, confirming that the exposed credential existed before containment activities began.
 
-[EVIDENCE 04]
-CloudTrail timeline confirming investigation.
+### Access Key Disabled
 
-[EVIDENCE 05]
-Verification that no active credentials remain.
+![Access Key Disabled](../../assets/project1/evidence-02-access-key-disabled.png)
+
+Disabling the access key immediately prevented additional authentication attempts while preserving the credential for investigation.
+
+### Access Key Deleted
+
+![Access Key Deleted](../../assets/project1/evidence-03-access-key-deleted.png)
+
+Removing the compromised credential permanently eliminated its ability to authenticate and reduced the organization's attack surface.
+
+### CloudTrail Investigation Timeline
+
+![CloudTrail Investigation Timeline](../../assets/project1/evidence-04-cloudtrail-timeline.png)
+
+AWS CloudTrail provided the authoritative audit trail needed to reconstruct the sequence of events, verify the affected identity, and determine when the credential was used during the investigation.
+
+### Final Credential Verification
+
+![Final Credential Verification](../../assets/project1/evidence-05-final-verification.png)
+
+A final review confirmed that no active access keys remained for the affected service account, verifying that the compromised credential had been fully contained.
 
 ## Verification
 
