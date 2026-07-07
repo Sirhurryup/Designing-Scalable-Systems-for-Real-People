@@ -13,7 +13,7 @@ Technologies:
   - AWS Resource Tagging
 ---
 
-# Designing Secure Cloud Document Storage for a Healthcare Client
+# Designing a Secure Cloud Document Storage Platform for Healthcare Group Corporation
 
 ## Business Problem
 
