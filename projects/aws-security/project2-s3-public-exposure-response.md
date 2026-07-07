@@ -71,32 +71,51 @@ Key architectural decisions included:
 
 ## Implementation
 
-We began by enabling all four Amazon S3 Block Public Access settings to immediately eliminate external access to the affected bucket. After confirming the protection was active, we removed the public bucket policy while preserving all transaction records to support forensic analysis.
+We began by assessing the security posture of the affected Amazon S3 bucket and confirmed that Block Public Access had been disabled. The bucket policy also granted anonymous read access, creating the potential exposure of sensitive financial records.
 
-Next, we reviewed AWS CloudTrail to reconstruct the incident timeline. The audit logs confirmed that the `dev-deploy-service` IAM user disabled Block Public Access and subsequently applied a public bucket policy, establishing both the responsible identity and the exposure window.
+### Public S3 Bucket Configuration
 
-Finally, we validated that the bucket no longer displayed a public status, confirmed the public policy had been removed, and documented the investigation findings for the client's incident response records. Throughout the engagement, each remediation step was verified before advancing to the next phase to ensure the exposure was contained without compromising evidence.
+![Public S3 Bucket Configuration](../../assets/project2/evidence-01-public-bucket.png)
 
-[EVIDENCE 01]
-S3 bucket showing Public status.
+The initial bucket configuration confirmed that Block Public Access was disabled and a public bucket policy permitted anonymous access, establishing the starting point of the investigation.
 
-[EVIDENCE 02]
-Public bucket policy (Principal "*").
+We immediately enabled all four Amazon S3 Block Public Access settings to contain the exposure while preserving the bucket contents for forensic analysis.
 
-[EVIDENCE 03]
-CloudTrail showing DeleteBucketPublicAccessBlock.
+### Block Public Access Enabled
 
-[EVIDENCE 04]
-CloudTrail showing PutBucketPolicy.
+![Block Public Access Enabled](../../assets/project2/evidence-02-block-public-access-enabled.png)
 
-[EVIDENCE 05]
-Block Public Access enabled.
+Enabling all four Block Public Access settings immediately prevented new public access configurations from taking effect while preserving the existing data.
 
-[EVIDENCE 06]
-Bucket no longer Public.
+Next, we removed the public bucket policy without modifying or deleting any transaction records.
 
-[EVIDENCE 07]
-Final verification.
+### Public Bucket Policy Removed
+
+![Public Bucket Policy Removed](../../assets/project2/evidence-03-public-policy-removed.png)
+
+Removing the public bucket policy eliminated anonymous object access while preserving evidence required for the investigation.
+
+We then reviewed AWS CloudTrail to reconstruct the sequence of events and identify how the bucket became publicly accessible.
+
+### DeleteBucketPublicAccessBlock Event
+
+![DeleteBucketPublicAccessBlock Event](../../assets/project2/evidence-04-delete-bucket-public-access-block.png)
+
+CloudTrail confirmed that the `dev-deploy-service` IAM user disabled Block Public Access, establishing who initiated the configuration change and when the exposure window began.
+
+### PutBucketPolicy Event
+
+![PutBucketPolicy Event](../../assets/project2/evidence-05-put-bucket-policy.png)
+
+CloudTrail captured the policy that granted anonymous `s3:GetObject` access using `Principal: "*"`, providing definitive evidence of how the bucket became publicly accessible.
+
+After containment, we verified that Block Public Access had been restored, the public bucket policy had been removed, and the bucket no longer appeared publicly accessible.
+
+### Final Bucket Configuration
+
+![Final Bucket Configuration](../../assets/project2/evidence-06-final-bucket-configuration.png)
+
+The final configuration confirmed that Block Public Access was enabled, the public bucket policy had been removed, and the bucket had returned to a secure production state.
 
 ## Verification
 
