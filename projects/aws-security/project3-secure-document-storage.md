@@ -117,3 +117,13 @@ Versioning, lifecycle policies, and standardized resource tagging reduce manual 
 
 A well-designed storage platform is more than an Amazon S3 bucket. It protects sensitive information, improves recoverability, reduces long-term costs, and provides a scalable foundation that supports the client's business as it grows.
 
+---
+
+## Continue the Journey
+
+This engagement is part of the **Designing Scalable Systems for Real People** portfolio, where SirhurryUp Corporation documents real-world cloud consulting engagements across security, infrastructure, automation, and scalable systems.
+
+For the engineering narrative behind this engagement, read the accompanying Medium article.
+
+Explore the remaining engagements to see how these principles evolve across AWS, Linux, Docker, Terraform, Kubernetes, Automation, and AI.
+
