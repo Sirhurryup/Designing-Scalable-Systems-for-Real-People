@@ -67,29 +67,53 @@ Key architectural decisions included:
 
 ## Implementation
 
-We provisioned a dedicated Amazon S3 bucket using the client's production naming standard and immediately enabled all four Block Public Access settings to establish a secure baseline. Amazon S3 Versioning was then enabled to improve recoverability and protect against accidental overwrites or deletions.
+We provisioned a dedicated Amazon S3 bucket using the client's production naming convention to establish an isolated storage location for Healthcare Group Corporation's business documents.
 
-Next, we configured an automated lifecycle rule to transition objects to the Standard-IA storage class after 90 days, reducing long-term storage costs while maintaining immediate access to business records. Finally, we applied standardized resource tags to identify client ownership, production environment, and operational responsibility, ensuring the storage solution aligned with governance and cost management practices.
+### Production S3 Bucket Created
 
-Each configuration was verified after implementation to confirm the storage platform met the client's security, operational, and business requirements.
+![Production S3 Bucket Created](../../assets/project3/evidence-01-production-bucket-created.png)
 
-[EVIDENCE 01]
-Bucket creation.
+The production bucket was created using a standardized naming convention, providing a dedicated storage location for the client's business records.
 
-[EVIDENCE 02]
-Versioning enabled.
+We then enabled Amazon S3 Versioning to improve data recoverability and protect against accidental modification or deletion of stored documents.
 
-[EVIDENCE 03]
-Lifecycle rule (90-day Standard-IA).
+### Bucket Versioning Enabled
 
-[EVIDENCE 04]
-Block Public Access enabled.
+![Bucket Versioning Enabled](../../assets/project3/evidence-02-versioning-enabled.png)
 
-[EVIDENCE 05]
-Resource tags.
+Versioning ensures previous object versions are preserved, improving recoverability and reducing the risk of permanent data loss.
 
-[EVIDENCE 06]
-Final verification.
+Next, we configured an automated lifecycle rule to transition infrequently accessed documents to the Standard-IA storage class after 90 days.
+
+### Lifecycle Rule Configured
+
+![Lifecycle Rule Configured](../../assets/project3/evidence-03-lifecycle-rule.png)
+
+The lifecycle rule automatically transitions older documents to Standard-IA, reducing long-term storage costs while maintaining immediate availability.
+
+We enabled all four Amazon S3 Block Public Access settings to establish a secure default configuration and prevent unintended public exposure.
+
+### Block Public Access Enabled
+
+![Block Public Access Enabled](../../assets/project3/evidence-04-block-public-access.png)
+
+Enabling Block Public Access established a secure baseline and prevented accidental public exposure of sensitive business documents.
+
+Finally, we applied standardized resource tags to identify client ownership, production environment, and operational responsibility.
+
+### Resource Tags Applied
+
+![Resource Tags Applied](../../assets/project3/evidence-05-resource-tags.png)
+
+Standardized tags improve governance, simplify cost allocation, and support operational management across the AWS environment.
+
+A final review confirmed that the storage platform satisfied the client's security, recoverability, governance, and cost optimization requirements.
+
+### Final Bucket Configuration
+
+![Final Bucket Configuration](../../assets/project3/evidence-06-final-bucket-configuration.png)
+
+The completed configuration verified that the bucket was securely deployed with versioning enabled, lifecycle management configured, Block Public Access enforced, and governance tags successfully applied.
 
 ## Verification
 
