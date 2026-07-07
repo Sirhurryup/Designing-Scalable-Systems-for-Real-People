@@ -15,12 +15,10 @@ Technologies:
 
 # Protecting Criticial Payment Infrastructure Through Rapid Credential Containment
 
-# Project Title
-
-> **Engagement:** 01
-> **Client:** NorthBridge Financial
-> **Industry:** Financial Services
-> **Business Capability:** Credential Protection
+ **Engagement:** 01
+ **Client:** NorthBridge Financial
+ **Industry:** Financial Services
+ **Business Capability:** Credential Protection
 
 ## Business Problem
 
