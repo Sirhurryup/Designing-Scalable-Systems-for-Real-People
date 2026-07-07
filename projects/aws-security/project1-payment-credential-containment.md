@@ -75,6 +75,21 @@ Next, we confirmed that the service account did not have AWS Management Console 
 
 Throughout the engagement, every remediation step was validated before proceeding to the next phase to ensure the client's payment platform remained secure while preserving evidence for future analysis.
 
+[EVIDENCE 01]
+IAM user showing compromised access key.
+
+[EVIDENCE 02]
+Access key disabled.
+
+[EVIDENCE 03]
+Access key deleted.
+
+[EVIDENCE 04]
+CloudTrail timeline confirming investigation.
+
+[EVIDENCE 05]
+Verification that no active credentials remain.
+
 ## Verification
 
 We validated the success of the incident response by confirming the compromised access key was disabled and permanently removed from the affected service account. We also verified that no additional active access keys remained and confirmed the account could not authenticate through the AWS Management Console.
