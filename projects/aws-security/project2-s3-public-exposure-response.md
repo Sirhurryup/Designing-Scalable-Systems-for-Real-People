@@ -77,6 +77,27 @@ Next, we reviewed AWS CloudTrail to reconstruct the incident timeline. The audit
 
 Finally, we validated that the bucket no longer displayed a public status, confirmed the public policy had been removed, and documented the investigation findings for the client's incident response records. Throughout the engagement, each remediation step was verified before advancing to the next phase to ensure the exposure was contained without compromising evidence.
 
+[EVIDENCE 01]
+S3 bucket showing Public status.
+
+[EVIDENCE 02]
+Public bucket policy (Principal "*").
+
+[EVIDENCE 03]
+CloudTrail showing DeleteBucketPublicAccessBlock.
+
+[EVIDENCE 04]
+CloudTrail showing PutBucketPolicy.
+
+[EVIDENCE 05]
+Block Public Access enabled.
+
+[EVIDENCE 06]
+Bucket no longer Public.
+
+[EVIDENCE 07]
+Final verification.
+
 ## Verification
 
 We validated the effectiveness of the containment strategy by confirming that all four Amazon S3 Block Public Access settings were enabled and that the public bucket policy had been successfully removed. We also verified that the bucket no longer displayed a public status within the AWS Management Console.
