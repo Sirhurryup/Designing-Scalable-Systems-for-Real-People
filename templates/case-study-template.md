@@ -7,26 +7,25 @@ Client Industry:
 Difficulty: 
 Estimated Time: 
 Technologies: 
-
 ---
 
 
 # Project Title
 
-# Business Problem
+## Business Problem
 
-# Business Requirements
+## Business Requirements
 
-# Business Risks
+## Business Risks
 
-# Proposed Solution
+## Proposed Solution
 
-# Architecture Decisions
+## Architecture Decisions
 
-# Implementation
+## Implementation
 
-# Verification
+## Verification
 
-# Business Impact
+## Business Impact
 
-# Lessons Learned
+## Lessons Learned
