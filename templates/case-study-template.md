@@ -29,3 +29,15 @@ Technologies:
 ## Business Impact
 
 ## Lessons Learned
+
+### Lesson 1 — Containment Before Investigation
+
+...
+
+### Lesson 2 — CloudTrail Establishes Facts, Not Intent
+
+...
+
+### Lesson 3 — Business Impact Drives Technical Decisions
+
+...
