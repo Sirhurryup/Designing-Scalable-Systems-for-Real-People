@@ -15,6 +15,11 @@ Technologies:
 
 # Responding to a Public Exposure of Sensitive Financial Records Through Rapid S3 Containment
 
+> **Engagement:** 07
+> **Client:** NorthBridge Financial
+> **Industry:** Financial Services
+> **Business Capability:** Credential Protection
+
 ## Business Problem
 
 We provide cloud engineering and managed security services for organizations operating business-critical workloads on Amazon Web Services (AWS).
