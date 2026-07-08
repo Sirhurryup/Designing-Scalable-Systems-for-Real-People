@@ -1,5 +1,5 @@
 ---
-Project: 02
+Project: 07
 Category: AWS Security
 Business Capability: Data Exposure Response
 Company: Sirhurryup Corporation
@@ -83,7 +83,7 @@ We immediately enabled all four Amazon S3 Block Public Access settings to contai
 
 ### Block Public Access Enabled
 
-![Block Public Access Enabled](../../assets/project2/evidence-02-block-public-access-enabled.png)
+![Block Public Access Enabled](../../assets/project7/evidence-02-block-public-access-enabled.png)
 
 Enabling all four Block Public Access settings immediately prevented new public access configurations from taking effect while preserving the existing data.
 
@@ -91,7 +91,7 @@ Next, we removed the public bucket policy without modifying or deleting any tran
 
 ### Public Bucket Policy Removed
 
-![Public Bucket Policy Removed](../../assets/project2/evidence-03-public-policy-removed.png)
+![Public Bucket Policy Removed](../../assets/project7/evidence-03-public-policy-removed.png)
 
 Removing the public bucket policy eliminated anonymous object access while preserving evidence required for the investigation.
 
@@ -99,13 +99,13 @@ We then reviewed AWS CloudTrail to reconstruct the sequence of events and identi
 
 ### DeleteBucketPublicAccessBlock Event
 
-![DeleteBucketPublicAccessBlock Event](../../assets/project2/evidence-04-delete-bucket-public-access-block.png)
+![DeleteBucketPublicAccessBlock Event](../../assets/project7/evidence-04-delete-bucket-public-access-block.png)
 
 CloudTrail confirmed that the `dev-deploy-service` IAM user disabled Block Public Access, establishing who initiated the configuration change and when the exposure window began.
 
 ### PutBucketPolicy Event
 
-![PutBucketPolicy Event](../../assets/project2/evidence-05-put-bucket-policy.png)
+![PutBucketPolicy Event](../../assets/project7/evidence-05-put-bucket-policy.png)
 
 CloudTrail captured the policy that granted anonymous `s3:GetObject` access using `Principal: "*"`, providing definitive evidence of how the bucket became publicly accessible.
 
@@ -113,7 +113,7 @@ After containment, we verified that Block Public Access had been restored, the p
 
 ### Final Bucket Configuration
 
-![Final Bucket Configuration](../../assets/project2/evidence-06-final-bucket-configuration.png)
+![Final Bucket Configuration](../../assets/project7/evidence-06-final-bucket-configuration.png)
 
 The final configuration confirmed that Block Public Access was enabled, the public bucket policy had been removed, and the bucket had returned to a secure production state.
 
