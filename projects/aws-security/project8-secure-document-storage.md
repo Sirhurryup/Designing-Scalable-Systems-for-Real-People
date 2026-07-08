@@ -15,6 +15,11 @@ Technologies:
 
 # Designing a Secure Cloud Document Storage Platform for Healthcare Group Corporation
 
+> **Engagement:** 08
+> **Client:** Healthcare Group Corporation
+> **Industry:** Healthcare
+> **Business Capability:** Secure Document Storage
+
 ## Business Problem
 
 We provide cloud engineering and managed security services for organizations operating business-critical workloads on Amazon Web Services (AWS).
