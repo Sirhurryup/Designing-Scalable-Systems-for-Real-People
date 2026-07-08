@@ -55,9 +55,22 @@ Compared Apache, NGINX, and Lighttpd using response time and CPU utilization mea
 
 [View Project →](./projects/web-systems/project5-webserver-performance-comparison.md)
 
-Project 6: Protecting Critical Payment Infrastructure Through Rapid Credential Containment
+### Project 6: Protecting Critical Payment Infrastructure Through Rapid Credential Containment
+**Category:** AWS Security | **Capability:** Credential Protection
 
-Project 7: Responding to a Public Exposure of Sensitive Financial Records Through Rapid S3 Containment
+A consulting engagement focused on containing an exposed AWS IAM credential supporting a fictional financial services client. The case study demonstrates rapid containment, forensic investigation using AWS CloudTrail, and business-focused incident response.
 
-Project 8: Designing a Secure Cloud Document Storage Platform for Healthcare Group Corporation
+---
+
+### Project 7: Responding to a Public Exposure of Sensitive Financial Records Through Rapid S3 Containment
+**Category:** AWS Security | **Capability:** Data Exposure Response
+
+A consulting engagement centered on investigating and containing a publicly exposed Amazon S3 bucket. The project follows the complete incident lifecycle, from containment through forensic validation, using Amazon S3, AWS CloudTrail, and AWS IAM.
+
+---
+
+### Project 8: Designing a Secure Cloud Document Storage Platform for Healthcare Group Corporation
+**Category:** Cloud Storage | **Capability:** Secure Document Storage
+
+A consulting engagement that delivers a secure Amazon S3 document storage platform using versioning, lifecycle management, Block Public Access, and governance tagging to protect business records while optimizing long-term storage costs.
 
