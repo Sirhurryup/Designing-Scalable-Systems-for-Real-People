@@ -55,3 +55,9 @@ Compared Apache, NGINX, and Lighttpd using response time and CPU utilization mea
 
 [View Project →](./projects/web-systems/project5-webserver-performance-comparison.md)
 
+Project 6: Protecting Critical Payment Infrastructure Through Rapid Credential Containment
+
+Project 7: Responding to a Public Exposure of Sensitive Financial Records Through Rapid S3 Containment
+
+Project 8: Designing a Secure Cloud Document Storage Platform for Healthcare Group Corporation
+
