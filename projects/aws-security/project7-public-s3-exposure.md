@@ -18,7 +18,7 @@ Technologies:
 > **Engagement:** 07
 > **Client:** NorthBridge Financial
 > **Industry:** Financial Services
-> **Business Capability:** Credential Protection
+> **Business Capability:** Data Exposure Response
 
 ## Business Problem
 
