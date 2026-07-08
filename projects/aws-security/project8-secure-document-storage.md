@@ -1,5 +1,5 @@
 ---
-Project: 03
+Project: 08
 Category: Cloud Storage
 Business Capability: Secure Document Storage
 Company: Sirhurryup Corporation
@@ -71,7 +71,7 @@ We provisioned a dedicated Amazon S3 bucket using the client's production naming
 
 ### Production S3 Bucket Created
 
-![Production S3 Bucket Created](../../assets/project3/evidence-01-production-bucket-created.png)
+![Production S3 Bucket Created](../../assets/project8/evidence-01-production-bucket-created.png)
 
 The production bucket was created using a standardized naming convention, providing a dedicated storage location for the client's business records.
 
@@ -79,7 +79,7 @@ We then enabled Amazon S3 Versioning to improve data recoverability and protect 
 
 ### Bucket Versioning Enabled
 
-![Bucket Versioning Enabled](../../assets/project3/evidence-02-versioning-enabled.png)
+![Bucket Versioning Enabled](../../assets/project8/evidence-02-versioning-enabled.png)
 
 Versioning ensures previous object versions are preserved, improving recoverability and reducing the risk of permanent data loss.
 
@@ -87,7 +87,7 @@ Next, we configured an automated lifecycle rule to transition infrequently acces
 
 ### Lifecycle Rule Configured
 
-![Lifecycle Rule Configured](../../assets/project3/evidence-03-lifecycle-rule.png)
+![Lifecycle Rule Configured](../../assets/project8/evidence-03-lifecycle-rule.png)
 
 The lifecycle rule automatically transitions older documents to Standard-IA, reducing long-term storage costs while maintaining immediate availability.
 
@@ -95,7 +95,7 @@ We enabled all four Amazon S3 Block Public Access settings to establish a secure
 
 ### Block Public Access Enabled
 
-![Block Public Access Enabled](../../assets/project3/evidence-04-block-public-access.png)
+![Block Public Access Enabled](../../assets/project8/evidence-04-block-public-access.png)
 
 Enabling Block Public Access established a secure baseline and prevented accidental public exposure of sensitive business documents.
 
@@ -103,7 +103,7 @@ Finally, we applied standardized resource tags to identify client ownership, pro
 
 ### Resource Tags Applied
 
-![Resource Tags Applied](../../assets/project3/evidence-05-resource-tags.png)
+![Resource Tags Applied](../../assets/project8/evidence-05-resource-tags.png)
 
 Standardized tags improve governance, simplify cost allocation, and support operational management across the AWS environment.
 
@@ -111,7 +111,7 @@ A final review confirmed that the storage platform satisfied the client's securi
 
 ### Final Bucket Configuration
 
-![Final Bucket Configuration](../../assets/project3/evidence-06-final-bucket-configuration.png)
+![Final Bucket Configuration](../../assets/project8/evidence-06-final-bucket-configuration.png)
 
 The completed configuration verified that the bucket was securely deployed with versioning enabled, lifecycle management configured, Block Public Access enforced, and governance tags successfully applied.
 
