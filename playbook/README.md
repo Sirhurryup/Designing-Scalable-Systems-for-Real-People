@@ -1,3 +1,12 @@
+## Before You Begin
+
+I wrote this playbook to remember principles, not commands.
+
+If you'd like to understand why this playbook exists, begin here.
+
+**→ A Letter to My Future Self**
+
+
 # The SirhurryUp Consulting Playbook
 
 > **Technology changes. Principles endure.**
