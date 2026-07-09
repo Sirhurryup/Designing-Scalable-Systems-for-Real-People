@@ -64,3 +64,10 @@ Building a career through curiosity, consistency, integrity, and lifelong learni
 ---
 
 > *Every engagement contributes another page to this playbook.*
+
+
+The SirhurryUp Consulting Playbook
+
+Written and maintained by Doc.
+
+© 2026 Dottington. All rights reserved.
