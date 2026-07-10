@@ -137,5 +137,19 @@ Designed a secure Amazon S3 document storage platform using versioning, lifecycl
 
 ---
 
+## What's Next
+
+This repository continues to grow through new consulting engagements, engineering reflections, and principles documented in **The SirhurryUp Consulting Playbook**.
+
+Each engagement follows the same production workflow:
+
+1. Learn
+2. Capture Evidence
+3. Build the Engagement
+4. Write the Reflection
+5. Document the Principle
+6. Publish
+
+The goal is simple: become a more thoughtful engineer by solving real business problems, documenting the journey, and applying each lesson to the next engagement.
 
 © 2026 Dottington. All rights reserved.
