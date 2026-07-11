@@ -19,6 +19,26 @@ Technologies:
 
 ## Business Problem
 
+[paste the approved Business Problem]
+
+---
+
+## Primary Stakeholders
+
+[paste the stakeholder table/list]
+
+---
+
+## Business Requirements
+
+[paste the approved Business Requirements]
+
+---
+
+## Consulting Notes
+
+[paste the approved Consulting Notes]
+
 ## Business Requirements
 
 ## Business Risks
