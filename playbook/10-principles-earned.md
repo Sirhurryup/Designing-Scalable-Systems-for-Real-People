@@ -6,7 +6,7 @@ This document serves as the inbox for new principles discovered during consultin
 
 Every engagement should conclude by asking one question:
 
-> **What principle did we earn today?**
+> **What principle did I earn today?**
 
 Only principles that prove timeless through practice should be promoted into the permanent chapters of the SirhurryUp Consulting Playbook.
 
