@@ -181,7 +181,16 @@ AWS automatically manages the supporting CloudWatch alarms and adjusts capacity 
 
 ### Launch Template Validation
 
-The Launch Template was created successfully and serves as the standardized blueprint for future application servers.
+A standalone EC2 instance was launched directly from `pinnacle-app-launch-template`.
+
+Validation confirmed:
+
+- The instance entered the running state.
+- User data executed successfully.
+- Apache installed correctly.
+- The `httpd` service reported `active (running)`.
+
+This proves the Launch Template can independently create a functional application server before additional services are introduced.
 
 ### Auto Scaling Group Validation
 
