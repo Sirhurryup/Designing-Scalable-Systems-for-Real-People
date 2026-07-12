@@ -90,6 +90,8 @@ Configured:
 
 The Launch Template was successfully created and is now available for use by the Auto Scaling Group.
 
+Created the Auto Scaling Group using the approved Launch Template `pinnacle-app-launch-template`.
+
 ## Evidence
 
 Evidence 11
