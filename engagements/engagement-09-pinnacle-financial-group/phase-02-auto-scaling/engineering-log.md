@@ -91,6 +91,14 @@ Business Rationale
 
 The Launch Template separates server configuration from scaling decisions. Every instance launched during periods of increased demand will inherit an identical operating system, security configuration, and application setup, reducing configuration drift while improving operational consistency.
 
+### Scaling Policy Design
+
+A target tracking scaling policy will use the Auto Scaling Group's average CPU utilization as the demand signal.
+
+The target value is set to 70% for this controlled engagement. This threshold provides room for normal workload fluctuations while allowing the architecture to add capacity before sustained processing demand affects customer experience.
+
+The 70% value is a testing baseline rather than a universal production standard. A production threshold would be validated through performance testing, response-time objectives, historical workload patterns, and business risk tolerance.
+
 ## AWS Implementation
 
 Created a Launch Template named:
