@@ -36,6 +36,22 @@ Auto Scaling decides when additional servers are required.
 
 The Launch Template defines what each server should look like.
 
+### Auto Scaling Group
+
+The Auto Scaling Group manages the lifecycle and desired capacity of application servers.
+
+Architectural responsibilities:
+
+- Maintain the desired number of application instances.
+- Automatically replace unhealthy or terminated instances.
+- Launch new instances using the approved Launch Template.
+- Distribute instances across selected subnets for improved availability.
+- Prepare the architecture for dynamic scaling based on CloudWatch metrics.
+
+Business rationale:
+
+The Auto Scaling Group reduces operational risk by automatically maintaining application capacity. Customers experience improved availability while engineers no longer need to manually replace failed application servers.
+
 ## Design Decisions
 
 ### Launch Template Design
