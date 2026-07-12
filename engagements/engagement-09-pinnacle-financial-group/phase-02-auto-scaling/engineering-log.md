@@ -124,6 +124,16 @@ Created the Auto Scaling Group `pinnacle-app-asg` using the approved Launch Temp
 
 The group was configured across three public subnets, attached to `eng09-web-tg`, and set to maintain a baseline capacity of two application instances with a maximum capacity of four.
 
+Created the `pinnacle-cpu-target-tracking` target tracking scaling policy.
+
+Configuration:
+
+- Metric: Average CPU Utilization
+- Target value: 70%
+- Scale in: Enabled
+
+AWS automatically created and manages the required CloudWatch alarms for this policy.
+
 ## Evidence
 
 Evidence 11
