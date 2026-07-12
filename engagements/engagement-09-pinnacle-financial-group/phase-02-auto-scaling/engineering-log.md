@@ -166,6 +166,17 @@ Configured the Auto Scaling Group to maintain a baseline capacity of two applica
 
 The group spans all three public subnets, uses Elastic Load Balancing health checks with a 300-second grace period, and registers new instances with `eng09-web-tg`.
 
+Created the `pinnacle-cpu-target-tracking` scaling policy.
+
+Configuration:
+
+- Policy type: Target Tracking
+- Metric: Average CPU Utilization
+- Target value: 70%
+- Scale in: Enabled
+
+The scaling policy adjusts Auto Scaling Group capacity based on sustained CPU demand while remaining within the configured minimum and maximum capacity.
+
 ## Evidence
 
 Evidence 11
