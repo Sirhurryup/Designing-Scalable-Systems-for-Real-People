@@ -54,7 +54,7 @@ The Auto Scaling Group reduces operational risk by automatically maintaining app
 
 ## Design Decisions
 
-- The Auto Scaling Group spans both public subnets to improve availability and reduce the risk of a single Availability Zone affecting the application service.
+- The Auto Scaling Group spans all three public subnets to improve availability, distribute application capacity across multiple Availability Zones, and reduce the risk of a single-zone failure affecting the service.
 
 ### Launch Template Design
 
