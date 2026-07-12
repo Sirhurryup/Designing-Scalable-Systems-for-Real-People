@@ -34,7 +34,11 @@ Key architectural understanding:
 
 Auto Scaling decides when additional servers are required.
 
-The Launch Template defines what each server should look like.
+### Launch Template
+
+The Launch Template defines the standardized configuration for every application server that AWS launches to satisfy business demand.
+
+It ensures every instance inherits the approved operating system, instance type, security controls, storage configuration, and startup automation, reducing configuration drift and improving operational consistency.
 
 ### Auto Scaling Group
 
