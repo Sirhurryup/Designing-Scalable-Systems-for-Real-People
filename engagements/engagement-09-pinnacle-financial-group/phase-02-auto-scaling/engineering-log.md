@@ -192,18 +192,16 @@ Validation confirmed:
 
 This proves the Launch Template can independently create a functional application server before additional services are introduced.
 
-### Auto Scaling Group Validation
+### Load Balancer and Target Group Validation
 
-The Auto Scaling Group successfully launched and maintained two healthy application instances.
+The standalone validation instance was registered with `eng09-web-tg` and became healthy after `eng09-alb` was attached.
 
-Both instances:
+This confirms:
 
-- Launched from the approved Launch Template.
-- Completed the Apache bootstrap process.
-- Registered with `eng09-web-tg`.
-- Passed Elastic Load Balancer health checks.
-
-The architecture now demonstrates standardized server provisioning and automated instance lifecycle management. This establishes the baseline before introducing CloudWatch metrics and dynamic scaling policies.
+- The Application Load Balancer can reach the EC2 instance.
+- `eng09-alb-sg` and `eng09-web-sg` permit the intended traffic path.
+- The target group health check succeeds on HTTP port 80 and path `/`.
+- Apache responds correctly through the approved load-balanced architecture.
 
 ## Lessons Learned
 
