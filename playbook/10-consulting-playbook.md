@@ -1,66 +1,84 @@
 # SirhurryUp Consulting Playbook
 
-## Investigation
-
-### Principle 001
-
-Validate the smallest working component before validating the distributed system.
+> Experience teaches lessons.
+> Reflection transforms lessons into principles.
 
 ---
 
-### Principle 002
+# Mindset
 
-Engineering decisions should be driven by evidence, not urgency.
+### Engineering Decisions Are Driven By Evidence, Not Urgency
+
+Distributed systems require time to converge. Premature intervention introduces unnecessary variables, increases cost, and makes root-cause analysis more difficult.
+
+Observe first.
+Validate second.
+Act third.
+
+### Design Before You Deploy
+...
+
+### Verify Before You Scale
+...
+
+### Engineering Decisions Are Driven By Evidence, Not Urgency
+...
 
 ---
 
-## Architecture
+# Workflow
 
-### Principle 003
+### Why → Dependencies → Build → Verify → Document → Reflect
 
-Baseline availability is validated before elasticity.
+### Validate The Smallest Working Component First
 
----
+Every distributed system should be validated one layer at a time. Proving the smallest working component reduces troubleshooting complexity before additional dependencies are introduced.
 
-## Documentation
+### Baseline Availability Before Elasticity
 
-### Principle 004
+Before testing automatic scaling, first prove that the architecture can consistently launch and maintain healthy application instances.
 
-Validation is earned, not inherited.
-
----
-
-## Communication
+### Validate The Smallest Working Component First
 
 ...
 
+### Baseline Availability Before Elasticity
 
+...
 
+---
 
+# Architecture
 
+### Business Requirements Drive Technology
 
+...
 
+### Dependencies Matter
 
+...
 
+### Validation Is Earned, Not Inherited
 
+If infrastructure is rebuilt, every validation must be earned again. Previous success does not prove the current architecture.
 
+### Validation Is Earned, Not Inherited
 
+...
 
+---
 
+# Documentation
 
+...
 
+# Security
 
+...
 
+# Leadership
 
+...
 
-
-
-
-
-
-
-
-
-
-
-
+# Career
+...
