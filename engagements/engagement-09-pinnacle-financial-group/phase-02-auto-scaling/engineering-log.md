@@ -255,6 +255,19 @@ Both instances reached:
 
 This confirms that the Auto Scaling Group can use the approved Launch Template, register new instances with `eng09-web-tg`, and maintain the required baseline capacity before dynamic scaling is introduced.
 
+### Scaling Policy Validation
+
+The Auto Scaling Group now includes the `pinnacle-cpu-target-tracking` target tracking policy.
+
+Validation confirmed:
+
+- Target tracking policy created successfully.
+- Metric: Average CPU Utilization.
+- Target value: 70%.
+- Scale in enabled.
+
+The architecture is now prepared to respond automatically to sustained CPU demand while remaining within the configured capacity limits.
+
 ## Lessons Learned
 
 - Auto Scaling determines when to create additional instances.
