@@ -152,7 +152,22 @@ Evidence 14
 
 Auto Scaling Group Instance Management showing two healthy application instances.
 
+Evidence 15
+
+Target tracking scaling policy showing:
+
+- Policy name: `pinnacle-cpu-target-tracking`
+- Metric: Average CPU Utilization
+- Target value: 70%
+- Scale in enabled
+
 ## Validation
+
+### Scaling Policy Validation
+
+The Auto Scaling Group now includes a target tracking policy that uses average CPU utilization as the demand signal.
+
+AWS automatically manages the supporting CloudWatch alarms and adjusts capacity within the configured range of two to four instances.
 
 ### Launch Template Validation
 
