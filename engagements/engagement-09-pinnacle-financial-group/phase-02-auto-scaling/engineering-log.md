@@ -120,11 +120,28 @@ Evidence 13
 
 Auto Scaling Group review configuration showing the Launch Template, VPC, three public subnets, target group, health checks, and capacity settings.
 
+Evidence 14
+
+Auto Scaling Group Instance Management showing two healthy application instances.
+
 ## Validation
 
-Validation completed successfully.
+### Launch Template Validation
 
-The Launch Template can now launch standardized application servers using the approved operating system, networking, security configuration, and automated Apache installation.
+The Launch Template was created successfully and serves as the standardized blueprint for future application servers.
+
+### Auto Scaling Group Validation
+
+The Auto Scaling Group successfully launched and maintained two healthy application instances.
+
+Both instances:
+
+- Launched from the approved Launch Template.
+- Completed the Apache bootstrap process.
+- Registered with `eng09-web-tg`.
+- Passed Elastic Load Balancer health checks.
+
+The architecture now demonstrates standardized server provisioning and automated instance lifecycle management. This establishes the baseline before introducing CloudWatch metrics and dynamic scaling policies.
 
 ## Lessons Learned
 
