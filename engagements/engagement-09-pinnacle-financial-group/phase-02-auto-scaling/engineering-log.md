@@ -109,6 +109,16 @@ The target value is set to 70% for this controlled engagement. This threshold pr
 
 The 70% value is a testing baseline rather than a universal production standard. A production threshold would be validated through performance testing, response-time objectives, historical workload patterns, and business risk tolerance.
 
+### Auto Scaling Validation Strategy
+
+The initial Auto Scaling Group is intentionally deployed without a dynamic scaling policy.
+
+This separates baseline infrastructure validation from elasticity validation. The first objective is to verify that the Auto Scaling Group can consistently launch, register, and maintain healthy application instances before introducing CloudWatch-driven scaling decisions.
+
+Business Rationale
+
+Validating one architectural capability at a time reduces troubleshooting complexity and improves confidence in each infrastructure layer before additional automation is introduced.
+
 ## AWS Implementation
 
 Created a Launch Template named:
@@ -144,6 +154,10 @@ Configuration:
 
 AWS automatically created and manages the required CloudWatch alarms for this policy.
 
+Configured the Auto Scaling Group to maintain a baseline capacity of two application instances with a minimum of two and a maximum of four.
+
+The group spans all three public subnets, uses Elastic Load Balancing health checks with a 300-second grace period, and registers new instances with `eng09-web-tg`.
+
 ## Evidence
 
 Evidence 11
@@ -173,12 +187,6 @@ Target tracking scaling policy showing:
 
 ## Validation
 
-### Scaling Policy Validation
-
-The Auto Scaling Group now includes a target tracking policy that uses average CPU utilization as the demand signal.
-
-AWS automatically manages the supporting CloudWatch alarms and adjusts capacity within the configured range of two to four instances.
-
 ### Launch Template Validation
 
 A standalone EC2 instance was launched directly from `pinnacle-app-launch-template`.
@@ -202,6 +210,16 @@ This confirms:
 - `eng09-alb-sg` and `eng09-web-sg` permit the intended traffic path.
 - The target group health check succeeds on HTTP port 80 and path `/`.
 - Apache responds correctly through the approved load-balanced architecture.
+
+### End-to-End Application Validation
+
+The Application Load Balancer DNS endpoint successfully loaded the Pinnacle Financial Group validation page.
+
+This confirms the complete traffic path:
+
+Browser → `eng09-alb` → `eng09-web-tg` → EC2 → Apache
+
+The application delivery layer is now proven before Auto Scaling is reintroduced.
 
 ## Lessons Learned
 
