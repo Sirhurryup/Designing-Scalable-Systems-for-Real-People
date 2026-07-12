@@ -1,8 +1,8 @@
-## Launch Template Design
+### Launch Template Design
 
 The Launch Template establishes the standardized blueprint for every application server created by the Auto Scaling Group.
 
-Engineering decisions:
+Engineering Decisions
 
 - Amazon Linux 2023 (validated platform)
 - Instance type: t3.micro
@@ -13,6 +13,29 @@ Engineering decisions:
 - Web Server: Apache
 - Application Port: 80
 
-Business rationale:
+Business Rationale
 
 The Launch Template separates server configuration from scaling decisions. Every instance launched during periods of increased demand will inherit an identical operating system, security configuration, and application setup, reducing configuration drift and improving operational consistency.
+
+## AWS Implementation
+
+(Create Launch Template)
+
+## Evidence
+
+Evidence 11
+
+## Validation
+
+Launch Template created successfully.
+
+## Lessons Learned
+
+## Engineering Notes
+
+## Executive Summary
+
+
+
+
+
