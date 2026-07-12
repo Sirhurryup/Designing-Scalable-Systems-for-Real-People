@@ -60,7 +60,7 @@ The Auto Scaling Group reduces operational risk by automatically maintaining app
 - Minimum capacity was set to 2 to preserve baseline redundancy across multiple Availability Zones.
 - Desired capacity was set to 2 so the application begins with two active instances.
 - Maximum capacity was set to 4 to support controlled scale-out during testing while limiting cost exposure.
-
+- No dynamic scaling policy was configured during initial Auto Scaling Group creation. The baseline group will first be validated at a stable capacity of two instances before CloudWatch-driven scaling is introduced.
 ### Launch Template Design
 
 The Launch Template establishes the standardized blueprint for every application server created by the Auto Scaling Group.
