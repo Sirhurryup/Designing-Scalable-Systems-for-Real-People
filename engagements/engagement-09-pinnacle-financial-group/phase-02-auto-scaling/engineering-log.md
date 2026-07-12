@@ -52,6 +52,16 @@ Business rationale:
 
 The Auto Scaling Group reduces operational risk by automatically maintaining application capacity. Customers experience improved availability while engineers no longer need to manually replace failed application servers.
 
+### CloudWatch
+
+CloudWatch provides the observation layer for the Auto Scaling architecture.
+
+It measures application and instance behavior so scaling decisions can be based on real demand rather than fixed schedules or assumptions.
+
+Business rationale:
+
+CloudWatch helps Pinnacle Financial Group balance customer performance with cost efficiency by adding capacity only when metrics indicate increased demand and reducing capacity when demand declines.
+
 ## Design Decisions
 
 - The Auto Scaling Group spans all three public subnets to improve availability, distribute application capacity across multiple Availability Zones, and reduce the risk of a single-zone failure affecting the service.
