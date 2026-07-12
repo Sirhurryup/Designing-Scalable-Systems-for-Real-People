@@ -91,6 +91,12 @@ Engineering Decisions
 - Web Server: Apache
 - Application Port: 80
 
+### Bootstrap Strategy
+
+The initial Launch Template intentionally uses a minimal bootstrap process.
+
+Automatic operating system updates were excluded during validation to reduce external dependencies and isolate application provisioning. Additional operating system patching can be introduced after successful infrastructure validation.
+
 Business Rationale
 
 The Launch Template separates server configuration from scaling decisions. Every instance launched during periods of increased demand will inherit an identical operating system, security configuration, and application setup, reducing configuration drift while improving operational consistency.
