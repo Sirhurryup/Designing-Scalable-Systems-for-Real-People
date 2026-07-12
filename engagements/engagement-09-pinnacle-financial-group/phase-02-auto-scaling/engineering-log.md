@@ -208,6 +208,15 @@ Target tracking scaling policy showing:
 
 Auto Scaling Group Instance Management showing two instances in `InService` status with `Healthy` health status.
 
+Evidence 17
+
+Target tracking scaling policy showing:
+
+- Policy: `pinnacle-cpu-target-tracking`
+- Metric: Average CPU Utilization
+- Target: 70%
+- Scale in enabled
+
 ## Validation
 
 ### Launch Template Validation
@@ -267,6 +276,21 @@ Validation confirmed:
 - Scale in enabled.
 
 The architecture is now prepared to respond automatically to sustained CPU demand while remaining within the configured capacity limits.
+
+### Elasticity Validation
+
+Sustained CPU demand was generated across both baseline application instances.
+
+The `pinnacle-cpu-target-tracking` policy responded by increasing desired capacity from two to three instances.
+
+The newly launched instance:
+
+- Entered the `InService` lifecycle state.
+- Passed Elastic Load Balancing health checks.
+- Reached `Healthy` status.
+- Registered successfully with `eng09-web-tg`.
+
+This confirms that the architecture can add healthy application capacity automatically in response to sustained demand.
 
 ## Lessons Learned
 
