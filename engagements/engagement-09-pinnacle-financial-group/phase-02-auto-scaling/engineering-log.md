@@ -61,6 +61,7 @@ The Auto Scaling Group reduces operational risk by automatically maintaining app
 - Desired capacity was set to 2 so the application begins with two active instances.
 - Maximum capacity was set to 4 to support controlled scale-out during testing while limiting cost exposure.
 - No dynamic scaling policy was configured during initial Auto Scaling Group creation. The baseline group will first be validated at a stable capacity of two instances before CloudWatch-driven scaling is introduced.
+
 ### Launch Template Design
 
 The Launch Template establishes the standardized blueprint for every application server created by the Auto Scaling Group.
@@ -101,6 +102,10 @@ Created the Auto Scaling Group using the approved Launch Template `pinnacle-app-
 
 Connected `pinnacle-app-asg` to the existing Application Load Balancer target group so newly launched instances can register automatically and receive traffic after passing health checks.
 
+Created the Auto Scaling Group `pinnacle-app-asg` using the approved Launch Template.
+
+The group was configured across three public subnets, attached to `eng09-web-tg`, and set to maintain a baseline capacity of two application instances with a maximum capacity of four.
+
 ## Evidence
 
 Evidence 11
@@ -110,6 +115,10 @@ Launch Template configuration prior to creation.
 Evidence 12
 
 Launch Template created successfully.
+
+Evidence 13
+
+Auto Scaling Group review configuration showing the Launch Template, VPC, three public subnets, target group, health checks, and capacity settings.
 
 ## Validation
 
