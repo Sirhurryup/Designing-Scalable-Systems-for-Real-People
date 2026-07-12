@@ -57,6 +57,9 @@ The Auto Scaling Group reduces operational risk by automatically maintaining app
 - The Auto Scaling Group spans all three public subnets to improve availability, distribute application capacity across multiple Availability Zones, and reduce the risk of a single-zone failure affecting the service.
 - Elastic Load Balancing health checks were enabled so the Auto Scaling Group evaluates application availability rather than relying only on EC2 instance status.
 - A 300-second health check grace period was configured to allow the user data bootstrap process to complete before replacement decisions are made.
+- Minimum capacity was set to 2 to preserve baseline redundancy across multiple Availability Zones.
+- Desired capacity was set to 2 so the application begins with two active instances.
+- Maximum capacity was set to 4 to support controlled scale-out during testing while limiting cost exposure.
 
 ### Launch Template Design
 
