@@ -94,6 +94,8 @@ The Launch Template was successfully created and is now available for use by the
 
 Created the Auto Scaling Group using the approved Launch Template `pinnacle-app-launch-template`.
 
+Connected `pinnacle-app-asg` to the existing Application Load Balancer target group so newly launched instances can register automatically and receive traffic after passing health checks.
+
 ## Evidence
 
 Evidence 11
