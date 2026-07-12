@@ -66,6 +66,14 @@ Business rationale:
 
 CloudWatch helps Pinnacle Financial Group balance customer performance with cost efficiency by adding capacity only when metrics indicate increased demand and reducing capacity when demand declines.
 
+### Scaling Policy
+
+The Auto Scaling Group maintains the configured capacity, while the scaling policy adjusts that capacity in response to measured demand.
+
+Business rationale:
+
+The scaling policy allows Pinnacle Financial Group to preserve application performance during increased demand while preventing unnecessary infrastructure growth. Minimum and maximum capacity limits protect both availability and cost.
+
 ## Design Decisions
 
 - The Auto Scaling Group spans all three public subnets to improve availability, distribute application capacity across multiple Availability Zones, and reduce the risk of a single-zone failure affecting the service.
@@ -185,6 +193,10 @@ Target tracking scaling policy showing:
 - Target value: 70%
 - Scale in enabled
 
+- Evidence 16
+
+Auto Scaling Group Instance Management showing two instances in `InService` status with `Healthy` health status.
+
 ## Validation
 
 ### Launch Template Validation
@@ -220,6 +232,17 @@ This confirms the complete traffic path:
 Browser → `eng09-alb` → `eng09-web-tg` → EC2 → Apache
 
 The application delivery layer is now proven before Auto Scaling is reintroduced.
+
+### Auto Scaling Group Validation
+
+The Auto Scaling Group `pinnacle-app-asg` successfully launched and maintained two application instances.
+
+Both instances reached:
+
+- Lifecycle state: `InService`
+- Health status: `Healthy`
+
+This confirms that the Auto Scaling Group can use the approved Launch Template, register new instances with `eng09-web-tg`, and maintain the required baseline capacity before dynamic scaling is introduced.
 
 ## Lessons Learned
 
