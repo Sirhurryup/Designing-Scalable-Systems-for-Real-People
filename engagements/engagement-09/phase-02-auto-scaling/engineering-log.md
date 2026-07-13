@@ -4,7 +4,7 @@
 
 | Evidence | Description | Business Validation |
 |-----------|-------------|---------------------|
-| Evidence-00 | Budget configuration | Established cost controls before infrastructure deployment. |
+Evidence-00 | Budget Configuration | Established financial guardrails before infrastructure deployment to support responsible cloud cost management. |
 | Evidence-01 | VPC architecture | Verified the production network foundation. |
 | Evidence-02 | Public subnets | Confirmed multi-Availability Zone subnet design. |
 | Evidence-03 | Internet Gateway | Validated internet connectivity for public workloads. |
