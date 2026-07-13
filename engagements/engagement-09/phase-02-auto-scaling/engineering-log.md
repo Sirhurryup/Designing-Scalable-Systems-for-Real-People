@@ -12,16 +12,16 @@ Evidence-00 | Budget Configuration | Established financial guardrails before inf
 | Evidence-05 | Public Subnet Configuration | Confirmed automatic public IP assignment for application instances. |
 | Evidence-06 | Web Security Group | Validated inbound HTTP and SSH access for web servers. |
 | Evidence-07 | ALB Security Group | Validated inbound HTTP access to the Application Load Balancer. |
-| Evidence-08 | Validation EC2 Running | Confirmed the standalone validation server reached the running state. |
+Evidence-08 | Validation EC2 Running | Confirmed the baseline application server was operational before introducing load balancing and Auto Scaling.
 | Evidence-09 | Target Group Configuration | Verified the load balancer target group was configured correctly. |
-| Evidence-10 | Application Load Balancer | Verified successful ALB deployment. |
-| Evidence-11 | Launch Template Summary | Standardized future EC2 deployments through Auto Scaling. |
+Evidence-10 | Application Load Balancer | Verified the Application Load Balancer was successfully deployed to distribute customer traffic across application instances.
+Evidence-11 | Launch Template Summary | Standardized application server deployments to ensure every Auto Scaling instance launched with a consistent configuration.
 | Evidence-12 | Launch Template User Data | Automated Apache installation and application deployment. |
 | Evidence-13 | Auto Scaling Group Network Configuration | Verified ASG integration with VPC, subnets, ALB, target group, and health checks. |
 | Evidence-14 | Auto Scaling Capacity Configuration | Verified desired capacity, minimum, and maximum scaling limits. |
-| Evidence-15 | Auto Scaling Operational Configuration | Documented operational settings controlling instance behavior. |
+Evidence-15 | Auto Scaling Operational Configuration | Documented operational behaviors governing instance lifecycle, monitoring, and maintenance.
 | Evidence-16 | Two Healthy Auto Scaling Instances | Confirmed baseline high availability with two healthy instances. |
 | Evidence-17 | Target Tracking Scaling Policy | Verified CPU-based automatic scaling configuration. |
-| Evidence-18 | Scale-Out Validation | Confirmed the Auto Scaling Group successfully expanded capacity under load. |
+Evidence-18 | Scale-Out Validation | Verified the Auto Scaling Group automatically increased application capacity from two to four healthy instances during simulated customer demand.
 | Evidence-19 | End-to-End Application Validation | Verified customers could successfully access the application through the Application Load Balancer DNS endpoint. |
 
