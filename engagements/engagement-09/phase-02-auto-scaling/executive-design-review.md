@@ -1,4 +1,6 @@
 # Executive Design Review
+## Engagement 09 — Pinnacle Financial Group
+### Highly Available Web Platform
 
 ## Client
 
@@ -14,11 +16,11 @@
 
 ## Executive Summary
 
-SirhurryUp Corporation designed and validated a highly available web application platform capable of maintaining customer access during increased demand while reducing operational risk through automation.
+SirhurryUp Corporation designed, deployed, and validated a highly available web platform for Pinnacle Financial Group.
 
-The solution combines an Application Load Balancer, Launch Template, and Auto Scaling Group to automatically distribute incoming requests, replace unhealthy application servers, and increase application capacity when CPU utilization exceeds predefined business thresholds.
+The solution combines Elastic Load Balancing, standardized server provisioning, and automatic scaling to improve application availability, reduce operational overhead, and respond dynamically to changing customer demand.
 
-The engagement successfully demonstrated that the application remained available throughout deployment, automated scaling, and end-to-end customer validation while operating within established budget controls.
+The engagement concluded with successful end-to-end validation, including application accessibility, automated infrastructure provisioning, and automatic scale-out under simulated workload.
 
 ---
 
@@ -26,11 +28,11 @@ The engagement successfully demonstrated that the application remained available
 
 The client required a production-ready web platform capable of:
 
-- Providing continuous application availability.
-- Automatically distributing customer traffic across multiple application servers.
-- Responding to increases in customer demand without manual intervention.
-- Standardizing server deployment to reduce operational inconsistency.
-- Maintaining responsible cloud cost controls throughout the deployment.
+- Improve application availability.
+- Reduce manual operational effort.
+- Respond automatically to changing customer demand.
+- Standardize infrastructure deployment.
+- Operate within established cloud budget controls..
 
 ---
 
@@ -38,16 +40,30 @@ The client required a production-ready web platform capable of:
 
 The implemented architecture consisted of the following AWS services:
 
+### Networking
+
 - Amazon VPC
-- Public Subnets across multiple Availability Zones
+- Public Subnets
 - Internet Gateway
-- Public Route Tables
+- Route Tables
+
+### Security
+
 - Security Groups
+
+### Compute
+
 - Amazon EC2
 - Launch Template
+- Auto Scaling Group
+
+### Application Delivery
+
 - Application Load Balancer
 - Target Group
-- Auto Scaling Group
+
+### Elasticity
+
 - Target Tracking Scaling Policy
 
 Together, these services created a resilient platform capable of automatically responding to changing application demand while minimizing operational overhead.
@@ -58,7 +74,7 @@ Together, these services created a resilient platform capable of automatically r
 
 The engagement concluded with successful validation of each architectural milestone.
 
-Validation confirmed:
+The architecture successfully satisfied each validation gate established during the engagement.
 
 - The network foundation functioned as designed.
 - The standalone application server successfully hosted the web application.
@@ -72,9 +88,9 @@ Validation confirmed:
 
 ## Business Outcome
 
-The final architecture delivered a scalable and highly available application platform that reduced manual operational effort while improving resilience during periods of increased customer demand.
+The completed architecture provides Pinnacle Financial Group with a resilient application platform capable of maintaining customer availability while automatically adjusting infrastructure capacity to meet changing demand.
 
-By combining automated infrastructure provisioning with elastic scaling, the solution positioned Pinnacle Financial Group for future growth without requiring significant architectural redesign.
+By validating each architectural layer independently before introducing additional dependencies, the engagement reduced implementation risk and established a repeatable engineering methodology for future deployments.
 
 ---
 
@@ -85,14 +101,22 @@ The following improvements are recommended before production adoption:
 1. Enable HTTPS using AWS Certificate Manager.
 2. Deploy application servers within private subnets.
 3. Introduce Amazon RDS Multi-AZ for persistent application data.
-4. Enable centralized monitoring using Amazon CloudWatch dashboards and alarms.
-5. Capture application and access logs for operational visibility and security investigations.
+4. Capture application and access logs for operational visibility and security investigations.
+5. Enable centralized monitoring using Amazon CloudWatch dashboards and alarms.
 6. Continue validating scaling behavior through controlled performance testing.
 
 ---
 
-## Engagement Status
+## Engagement Conclusion
 
-**Status:** Successfully Completed
+The engagement achieved all defined business and technical objectives.
 
-The architecture satisfied the engagement objectives and demonstrated successful deployment, validation, automatic scaling, and customer accessibility.
+The final architecture successfully demonstrated:
+
+- Highly available application delivery.
+- Standardized infrastructure provisioning.
+- Automatic recovery through Auto Scaling.
+- Dynamic scale-out based on application demand.
+- End-to-end customer accessibility.
+
+The solution is recommended for progression toward a production-ready architecture following the implementation of the recommendations identified in this review.
