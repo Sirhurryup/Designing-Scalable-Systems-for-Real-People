@@ -23,5 +23,5 @@ Evidence-15 | Auto Scaling Operational Configuration | Documented operational be
 | Evidence-16 | Two Healthy Auto Scaling Instances | Confirmed baseline high availability with two healthy instances. |
 | Evidence-17 | Target Tracking Scaling Policy | Verified CPU-based automatic scaling configuration. |
 Evidence-18 | Scale-Out Validation | Verified the Auto Scaling Group automatically increased application capacity from two to four healthy instances during simulated customer demand.
-| Evidence-19 | End-to-End Application Validation | Verified customers could successfully access the application through the Application Load Balancer DNS endpoint. |
+| Evidence-19 | End-to-End Application Validation | Verified the customer-facing application remained accessible through the Application Load Balancer after the architecture was fully deployed and validated. |
 
