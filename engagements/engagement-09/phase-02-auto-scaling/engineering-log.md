@@ -1,6 +1,8 @@
 ---
 
-# Evidence Inventory
+## Evidence Inventory
+
+The following evidence demonstrates the progression of the engagement from architectural planning and infrastructure deployment through application validation, high availability, and automatic scaling.
 
 | Evidence | Description | Business Validation |
 |-----------|-------------|---------------------|
