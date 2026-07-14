@@ -130,7 +130,35 @@ Every architectural decision was evaluated against one question:
 
 > **Does this decision solve a business problem while reducing operational risk?**
 
+# Business Requirements
 
+The proposed solution was required to satisfy both business and technical objectives established during the client discovery sessions.
+
+The consulting team defined the following requirements before any AWS services were selected.
+
+### Availability
+
+Provide continuous application availability by eliminating single points of failure.
+
+### Scalability
+
+Automatically increase or decrease application capacity in response to changing customer demand without manual intervention.
+
+### Operational Consistency
+
+Standardize application server deployments to eliminate configuration drift and improve operational reliability.
+
+### Security
+
+Limit direct access to application servers by routing customer traffic through a centralized Application Load Balancer.
+
+### Cost Management
+
+Operate within established cloud budget controls while scaling only when business demand justifies additional infrastructure.
+
+### Engineering Quality
+
+Establish a repeatable deployment and validation methodology that can be reused for future cloud engagements.
 
 ### Availability
 
@@ -179,6 +207,16 @@ Operate within established cloud budget controls while scaling only when busines
 ### Engineering Quality
 
 Establish a repeatable deployment and validation methodology that can be reused for future cloud engagements.
+
+# Solution Overview
+
+SirhurryUp Corporation recommended a layered cloud architecture designed to improve application availability, automate operational processes, and support future business growth.
+
+Rather than introducing every AWS service simultaneously, the engagement followed an incremental implementation strategy. Each architectural layer was independently designed, deployed, and validated before introducing additional dependencies.
+
+This disciplined approach reduced implementation risk, simplified troubleshooting, and ensured that every new component inherited a previously validated foundation.
+
+The resulting architecture combines standardized infrastructure provisioning, intelligent traffic distribution, automated health monitoring, and elastic scaling to deliver a resilient platform capable of supporting changing customer demand.
 
 # Architectural Decisions
 
@@ -188,6 +226,7 @@ The strategy focused on five design principles.
 
 ---
 
+# Engineering Journey
 ## Principle 1 — Build a Strong Foundation
 
 Every cloud architecture depends upon a reliable network.
@@ -240,36 +279,6 @@ Technology was never the objective.
 
 Reliable customer experience was.
 
-# Business Requirements
-
-The proposed solution was required to satisfy the following business requirements:
-
-- Maintain high application availability.
-- Automatically distribute customer traffic.
-- Standardize application server deployments.
-- Automatically respond to changing customer demand.
-- Minimize manual operational effort.
-- Operate within established budget controls.
-- Establish a repeatable deployment methodology.
-
-# Solution Overview
-
-SirhurryUp Corporation recommended a layered cloud architecture that separated networking, security, compute, application delivery, and elasticity into distinct architectural responsibilities.
-
-Rather than deploying every component simultaneously, each layer was independently validated before introducing the next dependency. This reduced implementation risk while improving troubleshooting efficiency throughout the engagement.
-
-## Architectural Decisions
-
-# Engineering Journey
-
-The implementation followed a disciplined consulting methodology that emphasized incremental validation over rapid deployment.
-
-Rather than building the complete architecture at once, each layer was designed, implemented, and validated before introducing additional dependencies.
-
-This approach reduced troubleshooting complexity while providing measurable evidence that each architectural decision achieved its intended business objective.
-
----
-
 ## Phase 1 — Building the Foundation
 
 The engagement began by establishing the networking components that every future service would depend upon.
@@ -312,7 +321,7 @@ This staged implementation reduced uncertainty while allowing every new architec
 
 ---
 
-## Engineering Decisions
+## Methodology Highlights
 
 Several architectural decisions significantly influenced the success of the engagement.
 
@@ -340,33 +349,162 @@ When unexpected behavior occurred, the consulting team verified each dependency 
 
 This disciplined approach simplified troubleshooting while strengthening confidence in the final architecture.
 
-### Phase 1
-Network Foundation
 
-### Phase 2
-Elastic Architecture
+# Validation
 
-## Challenges Encountered
+The engagement concluded only after every architectural layer successfully passed its validation criteria.
 
-## Validation
+Validation followed a progressive methodology in which each completed layer became the trusted foundation for the next.
 
-## Business Outcome
 
-## Lessons Learned
+## Validation Gates
 
-## Repository Resources
+### Network Validation
 
-## What's Next
+The VPC, public subnets, Internet Gateway, route tables, and security groups were verified before deploying application infrastructure.
 
-## Client Stakeholders
+**Business Outcome**
 
-The following fictional stakeholders represent the leadership team for Pinnacle Financial Group throughout this consulting engagement.
+A stable networking foundation reduced implementation risk and established reliable connectivity for every future component.
 
-| Stakeholder | Role | Primary Responsibility |
-|------------|------|------------------------|
-| Beth Hamilton | Chief Technology Officer (CTO) | Executive sponsor responsible for technology strategy, investment decisions, and final architectural approval. |
-| Emma Brooks | Director of Digital Banking (Business Sponsor) | Represents business objectives, customer experience, and operational priorities for the banking platform. |
-| Kyle Bennett | Infrastructure Manager (Technical Lead) | Oversees infrastructure implementation, operational readiness, and engineering standards. |
-| Jack Reynolds | Information Security Manager | Ensures the architecture aligns with security policies, risk management, and compliance requirements. |
-| Natalie Carter | Cloud Operations Manager | Responsible for platform monitoring, availability, operational support, and production readiness. |
-| Chloe Mitchell | Digital Experience Manager | Represents customer-facing application performance, usability, and service availability. |
+---
+
+### Application Validation
+
+The application was successfully deployed and validated on a standalone EC2 instance before introducing load balancing.
+
+**Business Outcome**
+
+Application functionality was confirmed before additional architectural complexity was introduced.
+
+---
+
+### Load Balancer Validation
+
+The Application Load Balancer successfully distributed requests to healthy targets registered within the Target Group.
+
+**Business Outcome**
+
+Customer traffic could be distributed across multiple application servers while reducing the impact of individual server failures.
+
+---
+
+### Auto Scaling Validation
+
+The Auto Scaling Group maintained the desired application capacity using standardized Launch Templates.
+
+A Target Tracking Scaling Policy automatically increased capacity when sustained CPU utilization exceeded the established business threshold.
+
+**Business Outcome**
+
+The platform demonstrated automatic elasticity while reducing manual operational effort.
+
+---
+
+### End-to-End Validation
+
+The engagement concluded with successful customer access through the Application Load Balancer following deployment, validation, and automatic scaling.
+
+This final validation confirmed that the completed architecture satisfied the business objectives established during the client discovery sessions.
+
+# Business Outcome
+
+The engagement successfully transformed a manually managed application deployment into a resilient, standardized, and automatically scalable cloud platform.
+
+Key business outcomes included:
+
+- Improved application availability through redundant infrastructure.
+- Standardized server deployments using Launch Templates.
+- Automated traffic distribution using an Application Load Balancer.
+- Automatic infrastructure scaling based on customer demand.
+- Reduced operational effort through infrastructure automation.
+- A repeatable consulting methodology supported by documented evidence and validation.
+
+Beyond the technical implementation, the engagement established an engineering workflow that emphasizes disciplined validation, evidence-based decision making, and structured documentation before introducing additional architectural complexity.
+
+# Lessons Learned
+
+This engagement reinforced several consulting and engineering principles that will influence future cloud engagements.
+
+## Technical Lessons
+
+- Standardize infrastructure before introducing automation.
+- Validate each architectural layer independently.
+- Confirm application functionality before testing elasticity.
+- Measure success from the customer's perspective rather than infrastructure status.
+
+## Consulting Lessons
+
+- Business objectives should drive architectural decisions.
+- Stakeholder conversations provide context for every technical recommendation.
+- Evidence strengthens architectural credibility.
+- Executive documentation should communicate business value rather than implementation details.
+
+## Methodology Improvements
+
+Several improvements to the SirhurryUp Consulting Methodology emerged during this engagement:
+
+- Engineering documentation became the single source of truth before derivative documents were written.
+- Evidence was organized into a dedicated inventory with standardized naming conventions.
+- Documentation updates followed a consistent process:
+  - File
+  - Section
+  - Action
+  - Paste
+- Validation gates were introduced to reduce troubleshooting complexity.
+- Source documents were locked after review to maintain consistency across all deliverables.
+
+These improvements will become the standard workflow for future consulting engagements.
+
+
+# Repository Resources
+
+This engagement includes the following supporting documentation:
+
+- Engineering Log
+- Executive Design Review
+- Evidence Repository
+- Case Study
+- Medium Article (Published upon completion)
+
+Supporting evidence, architecture diagrams, and implementation artifacts are maintained within the Engagement 09 repository.
+
+# What's Next
+
+The completion of Engagement 09 establishes the baseline consulting methodology for future SirhurryUp Corporation engagements.
+
+Future engagements will continue applying the same disciplined workflow:
+
+Client Discovery
+
+↓
+
+Business Requirements
+
+↓
+
+Architecture
+
+↓
+
+Implementation
+
+↓
+
+Validation
+
+↓
+
+Executive Review
+
+↓
+
+Case Study
+
+↓
+
+Knowledge Sharing
+
+Each engagement will introduce new business challenges while reinforcing the consulting principles established throughout this project.
+
+
