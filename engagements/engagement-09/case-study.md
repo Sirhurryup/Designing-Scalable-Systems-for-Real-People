@@ -1,3 +1,39 @@
+# Case Study
+
+## Executive Snapshot
+
+## Client Stakeholders
+
+## Client Discovery
+
+## Business Problem
+
+## Business Requirements
+
+## Solution Overview
+
+## Architectural Decisions
+
+## Engineering Journey
+
+### Phase 1
+Network Foundation
+
+### Phase 2
+Elastic Architecture
+
+## Challenges Encountered
+
+## Validation
+
+## Business Outcome
+
+## Lessons Learned
+
+## Repository Resources
+
+## What's Next
+
 ## Client Stakeholders
 
 The following fictional stakeholders represent the leadership team for Pinnacle Financial Group throughout this consulting engagement.
