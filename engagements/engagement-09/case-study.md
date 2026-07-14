@@ -34,9 +34,101 @@ The following fictional stakeholders represent the leadership team for Pinnacle 
 
 ---
 
-## Client Discovery
+# Client Discovery
 
-## Business Problem
+Every successful consulting engagement begins with listening before designing.
+
+Rather than recommending AWS services immediately, the engagement opened with conversations intended to understand Pinnacle Financial Group's business objectives, operational concerns, and long-term growth strategy.
+
+---
+
+### Beth Hamilton — Chief Technology Officer
+
+> "Customer traffic is becoming less predictable throughout the year. I don't want our engineering team manually launching servers every time demand increases. We need an architecture that grows with the business while remaining financially responsible."
+
+**Consulting Insight**
+
+The solution required automated elasticity that balanced application performance with cloud cost management.
+
+---
+
+### Emma Brooks — Director of Digital Banking
+
+> "Our customers expect uninterrupted access to our digital banking platform. Availability isn't a feature—it's an expectation."
+
+**Consulting Insight**
+
+The architecture needed to prioritize resilience, high availability, and continuous customer access.
+
+---
+
+### Kyle Bennett — Infrastructure Manager
+
+> "Every time we deploy another server, someone configures it a little differently. That inconsistency eventually becomes an operational problem."
+
+**Consulting Insight**
+
+The engagement required standardized infrastructure provisioning through reusable deployment templates.
+
+---
+
+### Jack Reynolds — Information Security Manager
+
+> "I don't want application servers exposed directly to the Internet. Every layer should communicate only with the resources that actually need access."
+
+**Consulting Insight**
+
+Security Groups would enforce least-privilege communication by allowing customer traffic to terminate at the Application Load Balancer while limiting direct access to application servers.
+
+---
+
+### Natalie Carter — Cloud Operations Manager
+
+> "If a server fails, operations shouldn't depend on someone logging in at two o'clock in the morning to fix it."
+
+**Consulting Insight**
+
+The platform needed automated health monitoring, instance replacement, and operational resilience.
+
+---
+
+### Chloe Mitchell — Digital Experience Manager
+
+> "Customers don't remember the architecture. They remember whether the application worked."
+
+**Consulting Insight**
+
+Every validation activity throughout the engagement ultimately measured one outcome:
+
+**Can customers successfully access the application?**
+
+---
+
+## Discovery Summary
+
+These conversations established the business requirements that guided every architectural decision throughout the engagement.
+
+Rather than selecting AWS services first, the consulting team translated stakeholder concerns into measurable engineering objectives that could be validated throughout the implementation.
+
+# Business Problem
+
+Pinnacle Financial Group required a web platform capable of supporting continued business growth without increasing operational complexity.
+
+The existing deployment approach relied on manually provisioned application servers, creating inconsistent server configurations, unnecessary operational effort, and increased risk during periods of higher customer demand.
+
+From a business perspective, the organization needed a solution that would:
+
+- Improve application availability.
+- Reduce manual infrastructure management.
+- Standardize server deployments.
+- Automatically respond to changing customer demand.
+- Maintain responsible cloud cost controls.
+
+Rather than approaching the engagement as an AWS implementation exercise, the consulting team translated these business objectives into measurable engineering outcomes.
+
+Every architectural decision was evaluated against one question:
+
+> **Does this decision solve a business problem while reducing operational risk?**
 
 ## Business Requirements
 
