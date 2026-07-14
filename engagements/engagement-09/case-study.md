@@ -130,6 +130,67 @@ Every architectural decision was evaluated against one question:
 
 > **Does this decision solve a business problem while reducing operational risk?**
 
+
+# Solution Strategy
+
+Rather than selecting AWS services first, the consulting team developed an architectural strategy that aligned each technical decision with a specific business objective.
+
+The strategy focused on five design principles.
+
+---
+
+## Principle 1 — Build a Strong Foundation
+
+Every cloud architecture depends upon a reliable network.
+
+The engagement began by designing the networking layer before introducing compute, load balancing, or automation.
+
+This approach reduced implementation risk by ensuring every future component inherited a stable foundation.
+
+---
+
+## Principle 2 — Standardize Before You Scale
+
+Kyle Bennett's concern regarding inconsistent server deployments influenced one of the most important architectural decisions of the engagement.
+
+Instead of manually configuring every application server, a Launch Template standardized the operating system, application installation, security configuration, and startup process.
+
+Standardization ensures that every Auto Scaling instance begins from the same trusted configuration.
+
+---
+
+## Principle 3 — Validate Before Introducing Complexity
+
+Rather than deploying every AWS service at once, the consulting team validated each architectural layer independently.
+
+The application first proved it could run successfully on a single validation server before introducing the Application Load Balancer.
+
+The load-balanced architecture was then validated before enabling automatic scaling.
+
+This incremental approach simplified troubleshooting and reduced implementation risk throughout the engagement.
+
+---
+
+## Principle 4 — Automate Operational Resilience
+
+Automation was introduced only after the underlying architecture demonstrated stable operation.
+
+The Auto Scaling Group automatically maintained the desired number of healthy application servers while the Target Tracking Scaling Policy adjusted capacity in response to sustained customer demand.
+
+This reduced operational effort while improving platform resilience.
+
+---
+
+## Principle 5 — Measure Success from the Customer's Perspective
+
+The engagement did not conclude when the infrastructure deployed successfully.
+
+Success was measured when the customer-facing application remained accessible through the Application Load Balancer following deployment, validation, and automatic scaling.
+
+Technology was never the objective.
+
+Reliable customer experience was.
+
 ## Business Requirements
 
 ## Solution Overview
