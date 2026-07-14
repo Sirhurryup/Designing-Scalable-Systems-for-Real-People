@@ -131,6 +131,55 @@ Every architectural decision was evaluated against one question:
 > **Does this decision solve a business problem while reducing operational risk?**
 
 
+
+### Availability
+
+Provide continuous application availability by eliminating single points of failure.
+
+### Scalability
+
+Automatically increase or decrease application capacity in response to changing customer demand without manual intervention.
+
+### Operational Consistency
+
+Standardize application server deployments to eliminate configuration drift and improve operational reliability.
+
+### Security
+
+Limit direct access to application servers by routing customer traffic through a centralized Application Load Balancer.
+
+### Cost Management
+
+Operate within established cloud budget controls while scaling only when business demand justifies additional infrastructure.
+
+### Engineering Quality
+
+Establish a repeatable deployment and validation methodology that can be reused for future cloud engagements.
+
+### Availability
+
+Provide continuous application availability by eliminating single points of failure.
+
+### Scalability
+
+Automatically increase or decrease application capacity in response to changing customer demand without manual intervention.
+
+### Operational Consistency
+
+Standardize application server deployments to eliminate configuration drift and improve operational reliability.
+
+### Security
+
+Limit direct access to application servers by routing customer traffic through a centralized Application Load Balancer.
+
+### Cost Management
+
+Operate within established cloud budget controls while scaling only when business demand justifies additional infrastructure.
+
+### Engineering Quality
+
+Establish a repeatable deployment and validation methodology that can be reused for future cloud engagements.
+
 # Architectural Decisions
 
 Rather than selecting AWS services first, the consulting team developed an architectural strategy that aligned each technical decision with a specific business objective.
