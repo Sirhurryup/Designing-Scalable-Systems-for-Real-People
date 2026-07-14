@@ -131,7 +131,7 @@ Every architectural decision was evaluated against one question:
 > **Does this decision solve a business problem while reducing operational risk?**
 
 
-# Solution Strategy
+# Architectural Decisions
 
 Rather than selecting AWS services first, the consulting team developed an architectural strategy that aligned each technical decision with a specific business objective.
 
@@ -191,13 +191,105 @@ Technology was never the objective.
 
 Reliable customer experience was.
 
-## Business Requirements
+# Business Requirements
 
-## Solution Overview
+The proposed solution was required to satisfy the following business requirements:
+
+- Maintain high application availability.
+- Automatically distribute customer traffic.
+- Standardize application server deployments.
+- Automatically respond to changing customer demand.
+- Minimize manual operational effort.
+- Operate within established budget controls.
+- Establish a repeatable deployment methodology.
+
+# Solution Overview
+
+SirhurryUp Corporation recommended a layered cloud architecture that separated networking, security, compute, application delivery, and elasticity into distinct architectural responsibilities.
+
+Rather than deploying every component simultaneously, each layer was independently validated before introducing the next dependency. This reduced implementation risk while improving troubleshooting efficiency throughout the engagement.
 
 ## Architectural Decisions
 
-## Engineering Journey
+# Engineering Journey
+
+The implementation followed a disciplined consulting methodology that emphasized incremental validation over rapid deployment.
+
+Rather than building the complete architecture at once, each layer was designed, implemented, and validated before introducing additional dependencies.
+
+This approach reduced troubleshooting complexity while providing measurable evidence that each architectural decision achieved its intended business objective.
+
+---
+
+## Phase 1 — Building the Foundation
+
+The engagement began by establishing the networking components that every future service would depend upon.
+
+The consulting team designed and validated:
+
+- Amazon VPC
+- Public Subnets across three Availability Zones
+- Internet Gateway
+- Public Route Tables
+- Security Groups
+
+Each networking component was verified before deploying the first application server.
+
+This decision reflected the principle:
+
+> **Stable cloud architectures begin with stable foundations.**
+
+---
+
+## Phase 2 — Delivering Elastic Application Infrastructure
+
+Once the networking layer demonstrated reliable operation, attention shifted toward application availability and operational resilience.
+
+The implementation introduced:
+
+- Launch Template
+- Application Load Balancer
+- Target Group
+- Auto Scaling Group
+- Target Tracking Scaling Policy
+
+Rather than enabling automatic scaling immediately, the consulting team first validated a single application server.
+
+Only after confirming successful application delivery did the engagement introduce load balancing.
+
+Automatic scaling was enabled only after the load-balanced environment consistently demonstrated healthy application delivery.
+
+This staged implementation reduced uncertainty while allowing every new architectural layer to inherit a previously validated foundation.
+
+---
+
+## Engineering Decisions
+
+Several architectural decisions significantly influenced the success of the engagement.
+
+### Standardization Before Automation
+
+Kyle Bennett's concern regarding inconsistent server deployments resulted in the adoption of Launch Templates.
+
+Every new application server now launches from a consistent, repeatable configuration rather than manual administrative effort.
+
+---
+
+### Customer Experience Before Infrastructure Metrics
+
+Chloe Mitchell reminded the consulting team that customers evaluate application availability—not infrastructure diagrams.
+
+Consequently, the final validation measured successful customer access through the Application Load Balancer rather than simply confirming that AWS resources existed.
+
+---
+
+### Evidence Before Assumptions
+
+Throughout implementation, architectural decisions were validated through testing rather than assumption.
+
+When unexpected behavior occurred, the consulting team verified each dependency individually before introducing additional variables.
+
+This disciplined approach simplified troubleshooting while strengthening confidence in the final architecture.
 
 ### Phase 1
 Network Foundation
