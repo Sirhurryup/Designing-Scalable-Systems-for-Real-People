@@ -160,54 +160,6 @@ Operate within established cloud budget controls while scaling only when busines
 
 Establish a repeatable deployment and validation methodology that can be reused for future cloud engagements.
 
-### Availability
-
-Provide continuous application availability by eliminating single points of failure.
-
-### Scalability
-
-Automatically increase or decrease application capacity in response to changing customer demand without manual intervention.
-
-### Operational Consistency
-
-Standardize application server deployments to eliminate configuration drift and improve operational reliability.
-
-### Security
-
-Limit direct access to application servers by routing customer traffic through a centralized Application Load Balancer.
-
-### Cost Management
-
-Operate within established cloud budget controls while scaling only when business demand justifies additional infrastructure.
-
-### Engineering Quality
-
-Establish a repeatable deployment and validation methodology that can be reused for future cloud engagements.
-
-### Availability
-
-Provide continuous application availability by eliminating single points of failure.
-
-### Scalability
-
-Automatically increase or decrease application capacity in response to changing customer demand without manual intervention.
-
-### Operational Consistency
-
-Standardize application server deployments to eliminate configuration drift and improve operational reliability.
-
-### Security
-
-Limit direct access to application servers by routing customer traffic through a centralized Application Load Balancer.
-
-### Cost Management
-
-Operate within established cloud budget controls while scaling only when business demand justifies additional infrastructure.
-
-### Engineering Quality
-
-Establish a repeatable deployment and validation methodology that can be reused for future cloud engagements.
-
 # Solution Overview
 
 SirhurryUp Corporation recommended a layered cloud architecture designed to improve application availability, automate operational processes, and support future business growth.
@@ -226,7 +178,7 @@ The strategy focused on five design principles.
 
 ---
 
-# Engineering Journey
+# Design Principles
 ## Principle 1 — Build a Strong Foundation
 
 Every cloud architecture depends upon a reliable network.
@@ -321,7 +273,7 @@ This staged implementation reduced uncertainty while allowing every new architec
 
 ---
 
-## Methodology Highlights
+## Key Engineering Decisions
 
 Several architectural decisions significantly influenced the success of the engagement.
 
@@ -354,8 +306,7 @@ This disciplined approach simplified troubleshooting while strengthening confide
 
 The engagement concluded only after every architectural layer successfully passed its validation criteria.
 
-Validation followed a progressive methodology in which each completed layer became the trusted foundation for the next.
-
+Validation followed a progressive engineering methodology in which each completed layer became the trusted foundation for the next.
 
 ## Validation Gates
 
@@ -505,6 +456,15 @@ Case Study
 
 Knowledge Sharing
 
-Each engagement will introduce new business challenges while reinforcing the consulting principles established throughout this project.
+This engagement established the consulting standards that future SirhurryUp engagements will continue to refine rather than reinvent. 
 
 
+Prepared by:
+
+SirhurryUp Corporation
+
+Engagement Lead:
+Doc Dott
+
+Date:
+July 2026
