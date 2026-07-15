@@ -458,6 +458,16 @@ Knowledge Sharing
 
 This engagement established the consulting standards that future SirhurryUp engagements will continue to refine rather than reinvent. 
 
+## Reflection
+
+This engagement fundamentally changed the way I think about engineering.
+
+Instead of measuring success by the AWS services I could deploy, I began measuring success by the quality of the questions asked before making architectural decisions.
+
+**Related Essay**
+
+The Question No One Asked Me → [Medium Link]
+
 
 Prepared by:
 
