@@ -34,10 +34,10 @@ This engagement is organized into the following consulting deliverables.
 
 | Document | Purpose |
 |----------|---------|
-| Case Study | Complete consulting narrative from discovery through lessons learned. |
-| Executive Design Review | Executive-level summary of business outcomes, architecture, validation, and recommendations. |
-| Engineering Log | Technical implementation, validation activities, and engineering evidence. |
-| Evidence Repository | Inventory of architectural evidence supporting engagement conclusions. |
+| [Case Study](case-study.md) | Complete consulting narrative from discovery through lessons learned. |
+| [Executive Design Review](phase-02-auto-scaling/executive-design-review.md) | Executive-level summary of business outcomes, architecture, validation, and recommendations. |
+| [Engineering Log](phase-02-auto-scaling/engineering-log.md) | Technical implementation, validation activities, and engineering evidence. |
+| [Evidence Repository](phase-02-auto-scaling/evidence.md) | Inventory of architectural evidence supporting engagement conclusions. |
 
 ---
 
