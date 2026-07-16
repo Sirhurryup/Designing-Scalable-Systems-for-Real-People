@@ -41,12 +41,6 @@ This engagement is organized into the following consulting deliverables.
 
 ---
 
-# Architecture
-
-> ![Engagement 09 Architecture](images/phase-02/architecture-diagram.png)
-
----
-
 # Evidence
 
 Project screenshots are organized by implementation phase.
