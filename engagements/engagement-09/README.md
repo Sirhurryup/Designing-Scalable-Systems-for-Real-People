@@ -43,7 +43,7 @@ This engagement is organized into the following consulting deliverables.
 
 # Architecture
 
-> *(Insert final architecture diagram here.)*
+> ![Engagement 09 Architecture](images/phase-02/architecture-diagram.png)
 
 ---
 
@@ -51,11 +51,8 @@ This engagement is organized into the following consulting deliverables.
 
 Project screenshots are organized by implementation phase.
 
-```text
-images/
-├── phase-01/
-└── phase-02/
-```
+- Phase 1 — Foundation Architecture (`images/phase-01/`)
+- Phase 2 — Elastic Infrastructure (`images/phase-02/`)
 
 ---
 
