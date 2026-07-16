@@ -43,10 +43,9 @@ This engagement is organized into the following consulting deliverables.
 
 # Evidence
 
-Project screenshots are organized by implementation phase.
+Supporting implementation evidence, validation screenshots, and engineering artifacts are organized by implementation phase within the `images/` directory.
 
-- Phase 1 — Foundation Architecture (`images/phase-01/`)
-- Phase 2 — Elastic Infrastructure (`images/phase-02/`)
+Detailed evidence references are documented in the Evidence Repository.
 
 ---
 
