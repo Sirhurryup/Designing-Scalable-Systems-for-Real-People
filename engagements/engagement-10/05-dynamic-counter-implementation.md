@@ -89,3 +89,62 @@ The test confirms:
 > Code requests an action. IAM determines whether AWS allows it.
 
 Least privilege was verified through failure first, followed by the minimum required permission and a successful retest.
+
+## API Gateway Integration
+
+An HTTP API named `portfolio-api` was created to provide a controlled public interface for the visitor counter.
+
+### Route
+
+`POST /visitor-count`
+
+### Integration
+
+The route invokes:
+
+`portfolio-visitor-counter`
+
+### Stage
+
+`$default`
+
+Automatic deployment is enabled for the default stage.
+
+---
+
+## API Verification
+
+The endpoint was tested from the command line using `curl`.
+
+### Request
+
+`POST /visitor-count`
+
+### Observed Response
+
+```json
+{
+  "count": 3
+}
+```
+
+### Status
+
+**PASS**
+
+The successful request confirms the complete application path:
+
+**Client → API Gateway → Lambda → IAM authorization → DynamoDB → Updated counter returned**
+
+---
+
+## Principle Reinforced
+
+> Test one boundary at a time.
+
+The Lambda-to-DynamoDB path was verified before introducing API Gateway.
+
+API Gateway was then tested independently before browser integration.
+
+This reduced troubleshooting scope and made the source of failure easier to identify.
+
