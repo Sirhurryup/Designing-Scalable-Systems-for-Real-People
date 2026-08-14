@@ -152,4 +152,72 @@ However, that complexity provides meaningful capabilities:
 
 The additional component therefore satisfies requirements that S3 alone should not be expected to provide.
 
+## Architecture Decision 03 — Domain Identity and Secure Communication
+
+### Business Capability
+
+Visitors need a memorable way to locate the portfolio and a trusted, encrypted connection when accessing it.
+
+The platform will use:
+
+**docdott.com**
+
+### Technical Requirements
+
+Two separate technical capabilities are required:
+
+1. Resolve the human-readable domain name to the portfolio's delivery infrastructure.
+2. Establish trusted HTTPS communication between visitors and the platform.
+
+These responsibilities should not be confused.
+
+### DNS Responsibility
+
+DNS answers:
+
+> Where should requests for `docdott.com` go?
+
+The domain must resolve to the CloudFront distribution that serves as the portfolio's public delivery layer.
+
+### TLS Responsibility
+
+TLS answers a different question:
+
+> Can the browser establish a trusted and encrypted connection with `docdott.com`?
+
+A TLS certificate provides the identity required for the browser to establish trusted HTTPS communication with the portfolio while TLS protects data traveling between the visitor and the delivery layer.
+
+### Design Decision
+
+**DNS will route `docdott.com` toward the CloudFront distribution.**
+
+**AWS Certificate Manager will provide the TLS certificate used by CloudFront for HTTPS communication.**
+
+This produces the following responsibility chain:
+
+**DNS → Find the destination**
+
+**ACM/TLS → Establish trusted encrypted communication**
+
+**CloudFront → Deliver the content**
+
+**S3 → Store the content**
+
+### Security Boundary
+
+Successful DNS resolution does not mean communication is secure.
+
+Likewise, HTTPS does not mean every request is safe.
+
+TLS protects communication in transit, but an encrypted connection can still carry a malicious request.
+
+Application and request protection therefore remain separate security responsibilities that may require additional controls such as AWS WAF.
+
+### Architectural Principle
+
+> Connectivity, identity, encryption, and request security are different responsibilities.
+
+A secure architecture does not treat successful connectivity as proof of trusted or safe communication.
+
+
 
