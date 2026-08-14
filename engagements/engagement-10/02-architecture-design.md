@@ -515,3 +515,89 @@ Controls that are too restrictive may reject legitimate users.
 
 Rate limits and WAF rules should therefore be based on expected application behavior and adjusted using observed traffic.
 
+## Architecture Decision 08 — Observability and Cost Guardrails
+
+### Business Capability
+
+The portfolio must remain operationally understandable and financially controlled after deployment.
+
+A successful deployment is not enough. The system should provide enough visibility to identify abnormal behavior before it becomes a reliability or cost problem.
+
+### Technical Requirement
+
+The platform requires visibility into operational signals such as:
+
+* Request volume
+* Error rates
+* Lambda invocation failures
+* API failures
+* Latency
+* Unexpected traffic spikes
+* Backend execution trends
+
+The platform also requires financial guardrails capable of notifying the owner when AWS spending begins moving outside expected levels.
+
+### Design Decision
+
+**Amazon CloudWatch will provide operational visibility into application behavior.**
+
+Metrics and logs will be used to observe normal system behavior and identify unexpected changes such as:
+
+* Increasing errors
+* Function failures
+* Abnormal request volume
+* Increased latency
+* Sudden invocation spikes
+
+**AWS Budgets will provide financial notification when spending approaches or exceeds defined thresholds.**
+
+Budget notifications will alert the owner rather than automatically shutting down production services.
+
+This preserves availability while providing time to investigate and course correct.
+
+### Behavior Before Cost
+
+Cloud spending is the result of resource consumption.
+
+The relationship can be viewed as:
+
+**Application Behavior → Resource Consumption → Cost**
+
+For example, a significant increase in Lambda invocations may be visible in operational metrics before the financial impact becomes large enough to trigger a budget notification.
+
+Operational monitoring therefore provides an earlier opportunity to investigate abnormal behavior.
+
+### Observability and FinOps
+
+Cost management should not begin with the monthly bill.
+
+Unexpected cost often originates from unexpected system behavior.
+
+Monitoring execution trends, request volume, and resource consumption allows technical signals to inform financial decisions.
+
+### Response Philosophy
+
+An alert does not automatically mean the architecture should be changed.
+
+An alert creates an investigation point.
+
+The response should be:
+
+**Detect → Investigate → Identify Cause → Determine Impact → Correct if Necessary → Verify**
+
+Potential corrective actions could include:
+
+* Adjusting WAF rules
+* Modifying API throttling
+* Correcting application behavior
+* Revisiting architecture
+* Adjusting expected cost thresholds
+
+### Architectural Principle
+
+> Observe behavior before it becomes a bill.
+
+Operational telemetry provides early evidence of changing resource consumption, while financial guardrails provide protection against unexpected spending.
+
+Both are necessary because technical health and financial health are related but distinct responsibilities.
+
