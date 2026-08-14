@@ -305,4 +305,82 @@ The application must therefore understand its expected access patterns before de
 
 For this portfolio, that limitation is acceptable because the initial access patterns are simple and predictable.
 
+## Architecture Decision 05 — Application Interface and Business Logic
+
+### Business Capability
+
+Visitors must be able to interact with dynamic portfolio features such as the visitor counter and Engineering Guestbook without receiving direct access to backend data resources.
+
+### Technical Requirement
+
+The platform requires:
+
+* A defined HTTPS application interface
+* Request routing
+* Input validation
+* Business logic
+* Controlled access to DynamoDB
+* Separation between the browser and persistent data
+
+### Design Decision
+
+**Amazon API Gateway will provide the application interface.**
+
+API Gateway will receive requests from the browser and route them to the appropriate backend operation.
+
+Examples may include:
+
+* `GET /visitor-count`
+* `POST /visitor-count`
+* `GET /comments`
+* `POST /comments`
+
+**AWS Lambda will provide the application logic.**
+
+Lambda functions will:
+
+* Inspect incoming requests
+* Validate required fields
+* Enforce application rules
+* Process visitor counter updates
+* Prepare guestbook data
+* Read from or write to DynamoDB
+* Return application responses
+
+### Validation Responsibility
+
+Application validation belongs in the business logic layer.
+
+For example, a guestbook submission containing an empty name or an unacceptable comment should be rejected by Lambda before the request reaches DynamoDB.
+
+DynamoDB should persist valid application state rather than determine whether a guestbook comment satisfies the application's business rules.
+
+### Responsibility Boundary
+
+**API Gateway → Receive and route application requests**
+
+**Lambda → Validate and process application logic**
+
+**DynamoDB → Persist and retrieve application state**
+
+This creates a controlled boundary between public clients and backend resources.
+
+### Architectural Principle
+
+> Interface, logic, and persistence are separate responsibilities.
+
+Separating these concerns reduces coupling and prevents the browser from requiring direct database permissions.
+
+### Tradeoff
+
+Introducing API Gateway and Lambda adds additional components and request flow complexity.
+
+However, that complexity provides:
+
+* Controlled backend access
+* Centralized application logic
+* Input validation
+* Independent scaling
+* Reduced infrastructure management
+* A safer separation between clients and data
 
