@@ -31,4 +31,4 @@ Every major technology decision in this engagement will follow the same reasonin
 
 This prevents the architecture from becoming a collection of AWS services chosen simply because they are available.
 
-The service must earn its place in the system.
+The service must earn its place in the system. 
