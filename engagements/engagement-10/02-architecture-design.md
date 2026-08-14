@@ -384,3 +384,52 @@ However, that complexity provides:
 * Reduced infrastructure management
 * A safer separation between clients and data
 
+## Architecture Decision 06 — Least-Privilege Backend Access
+
+### Business Capability
+
+Backend functions must interact with application data without receiving unnecessary access to unrelated AWS resources.
+
+### Technical Requirement
+
+Each Lambda function requires an IAM execution role that grants only the permissions necessary to perform its assigned responsibility.
+
+### Design Decision
+
+**Lambda execution roles will follow the principle of least privilege.**
+
+The Guestbook function should receive only the DynamoDB permissions required to read and create guestbook records.
+
+The Visitor Counter function should receive only the permissions required to read and update visitor-count data.
+
+Broad administrative permissions will not be used simply because they make development easier.
+
+### Security Reasoning
+
+A function can be compromised even when it is not directly exposed as a public resource.
+
+If a vulnerable Lambda function has broad administrative permissions, an attacker may be able to use that function's credentials to access or modify unrelated AWS resources.
+
+If the same compromised function has narrowly scoped permissions, the potential damage is constrained to the limited actions and resources already authorized.
+
+### Responsibility Boundary
+
+**Lambda → Performs application logic**
+
+**IAM → Determines what that Lambda is authorized to do**
+
+**DynamoDB → Accepts only operations permitted by the Lambda execution role**
+
+### Architectural Principle
+
+> Grant workloads the minimum authority required to perform their business responsibility.
+
+Least privilege does not eliminate every security risk.
+
+It reduces the blast radius when something goes wrong.
+
+### Tradeoff
+
+Narrow IAM policies require more deliberate design and may require updates as application capabilities evolve.
+
+That additional effort is acceptable because permissions should expand only when the business responsibility expands.
