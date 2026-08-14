@@ -185,3 +185,66 @@ main {
         grid-template-columns: 1fr;
     }
 }
+
+.engineering {
+    padding: 6rem 0 7rem;
+    border-top: 1px solid var(--border);
+}
+
+.section-heading p:not(.eyebrow) {
+    max-width: 680px;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.project-card {
+    padding: 2rem;
+    border: 1px solid var(--border);
+    background: var(--surface);
+}
+
+.project-label {
+    margin: 0 0 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: var(--accent);
+}
+
+.project-card h3 {
+    margin: 0 0 1rem;
+    font-family: "Playfair Display", serif;
+    font-size: 1.8rem;
+}
+
+.project-card > p {
+    color: var(--text-muted);
+}
+
+.project-meta {
+    margin: 1.5rem 0;
+    display: grid;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.project-link {
+    font-weight: 700;
+}
+
+.project-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 760px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
