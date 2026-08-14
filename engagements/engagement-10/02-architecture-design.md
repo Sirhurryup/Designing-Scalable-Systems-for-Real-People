@@ -601,3 +601,70 @@ Operational telemetry provides early evidence of changing resource consumption, 
 
 Both are necessary because technical health and financial health are related but distinct responsibilities.
 
+## Architecture Review — Complexity Check
+
+Before implementation, the proposed architecture was reviewed to determine whether each component satisfies a defined business or technical requirement.
+
+The purpose of this review is to avoid adding AWS services simply because they are available.
+
+### Components Retained
+
+**Amazon S3**
+
+Required for durable storage of static portfolio assets.
+
+**Amazon CloudFront**
+
+Required for controlled public delivery, caching, HTTPS integration, and private-origin access.
+
+**AWS Certificate Manager**
+
+Required to provide the TLS certificate used for secure communication with the custom domain.
+
+**AWS WAF**
+
+Required to provide request filtering and abuse controls for the platform's public surfaces.
+
+**Amazon API Gateway**
+
+Required to establish a controlled public application interface.
+
+**AWS Lambda**
+
+Required to execute validation and application logic without maintaining persistent compute infrastructure.
+
+**Amazon DynamoDB**
+
+Required to persist visitor and guestbook application state.
+
+**AWS IAM**
+
+Required to control backend authorization using least-privilege execution roles.
+
+**Amazon CloudWatch**
+
+Required to observe application behavior and identify abnormal operational conditions.
+
+**AWS Budgets**
+
+Required to provide financial visibility and cost notifications.
+
+### DNS Decision
+
+The authoritative DNS for `docdott.com` is already managed through Amazon Route 53.
+
+Because Route 53 already controls the domain's DNS records, retaining it avoids an unnecessary migration and keeps domain routing inside the existing AWS environment.
+
+Route 53 will therefore provide DNS resolution for the portfolio and route `docdott.com` to the CloudFront distribution.
+
+### DNS Responsibility
+
+**Route 53 → Resolve `docdott.com` to the public delivery layer**
+
+This preserves the existing DNS control plane while allowing the portfolio architecture to integrate directly with CloudFront and the custom domain.
+
+### Architectural Principle
+
+> Preserve working infrastructure when it already satisfies the requirement.
+
+Architecture improvement does not require replacing a component simply because a new project is being introduced.
