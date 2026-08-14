@@ -88,3 +88,68 @@ Additional capabilities are still needed for:
 
 Those requirements will be addressed by additional architectural components rather than forcing S3 to solve responsibilities outside its role.
 
+## Architecture Decision 02 — Content Delivery and Origin Protection
+
+### Business Capability
+
+Visitors may access the portfolio from different geographic locations and should receive a secure and responsive experience.
+
+### Technical Requirement
+
+The platform requires a public delivery layer that can:
+
+* Deliver static content efficiently
+* Cache frequently requested objects
+* Support encrypted HTTPS traffic
+* Reduce unnecessary requests to the storage origin
+* Prevent visitors from directly accessing the S3 bucket
+
+### Alternatives Considered
+
+**Direct S3 Access**
+
+Visitors could retrieve portfolio objects directly from Amazon S3.
+
+This approach was rejected because it would make the storage layer responsible for public delivery and would prevent the architecture from maintaining a clear boundary between the public-facing delivery layer and the private origin.
+
+### Design Decision
+
+**Amazon CloudFront will serve as the public content delivery layer in front of a private Amazon S3 origin.**
+
+CloudFront can cache static portfolio assets at edge locations, allowing many requests to be satisfied without repeatedly retrieving the same object from S3.
+
+The S3 bucket will remain private.
+
+CloudFront Origin Access Control will authorize CloudFront to retrieve objects from the bucket while preventing direct public access to the S3 origin.
+
+### Responsibility Boundary
+
+The architecture separates two responsibilities:
+
+**Amazon S3 → Stores the objects**
+
+**Amazon CloudFront → Delivers the objects**
+
+The browser interacts with CloudFront rather than directly with the storage origin.
+
+### Architectural Principle
+
+> Storage and delivery are separate responsibilities.
+
+A service should not become publicly exposed simply because it contains content intended for public consumption.
+
+### Tradeoff
+
+Introducing CloudFront adds another managed service and additional configuration to the architecture.
+
+However, that complexity provides meaningful capabilities:
+
+* Edge caching
+* HTTPS delivery
+* Origin protection
+* A controlled public entry point
+* Reduced origin requests
+
+The additional component therefore satisfies requirements that S3 alone should not be expected to provide.
+
+
