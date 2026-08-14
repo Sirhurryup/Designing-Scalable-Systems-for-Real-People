@@ -219,5 +219,90 @@ Application and request protection therefore remain separate security responsibi
 
 A secure architecture does not treat successful connectivity as proof of trusted or safe communication.
 
+## Architecture Decision 04 — Persistent Application State
+
+### Business Capability
+
+The portfolio must support information that changes over time and remains available after an individual visitor session ends.
+
+Initial persistent state includes:
+
+* Visitor count
+* Engineering Guestbook entries
+
+### Technical Requirement
+
+The application requires a managed data store capable of supporting frequent small reads and writes without requiring database server administration.
+
+The workload is expected to have:
+
+* Low normal traffic
+* Potentially unpredictable spikes
+* Small data objects
+* Simple access patterns
+* A need for persistent state
+* Minimal infrastructure management
+
+### Alternatives Considered
+
+**Amazon S3**
+
+S3 is appropriate for storing static portfolio assets, but the visitor counter and guestbook introduce application state that changes frequently.
+
+Using objects as the primary mechanism for frequent counter updates and guestbook writes would blur the responsibility between object storage and application data.
+
+**Amazon RDS**
+
+A relational database could support the required reads and writes.
+
+However, the current workload does not require complex relational queries, joins, or relational transactions.
+
+Introducing a relational database would add capabilities and operational considerations beyond the current business requirement.
+
+### Design Decision
+
+**Amazon DynamoDB will provide persistent application state for the visitor counter and Engineering Guestbook.**
+
+DynamoDB aligns with the workload because it provides managed, low-latency reads and writes without requiring the project to operate database servers.
+
+The data model will be designed around known application access patterns rather than attempting to reproduce a traditional relational schema.
+
+### Initial Guestbook Data
+
+Each guestbook entry may contain:
+
+* `comment_id`
+* `name`
+* `comment`
+* `created_at`
+
+Future fields may include:
+
+* `role_or_company`
+* `status`
+
+The `status` attribute could support future moderation workflows.
+
+### Responsibility Boundary
+
+**S3 → Static application assets**
+
+**DynamoDB → Changing application state**
+
+The existence of dynamic content does not require the static storage layer to become a database.
+
+### Architectural Principle
+
+> Match the data store to the access pattern and operational requirement.
+
+A database should not be selected because it has more capabilities. It should be selected because its operating model and data access patterns fit the workload.
+
+### Tradeoff
+
+DynamoDB does not provide the relational querying model of a traditional SQL database.
+
+The application must therefore understand its expected access patterns before designing keys and indexes.
+
+For this portfolio, that limitation is acceptable because the initial access patterns are simple and predictable.
 
 
