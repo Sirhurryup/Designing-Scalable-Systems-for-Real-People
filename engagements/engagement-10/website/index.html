@@ -365,9 +365,60 @@
 
     </div>
 
+    <div class="live-metric">
+    <span class="metric-label">LIVE VISITOR COUNT</span>
+    <strong id="visitor-count">Loading...</strong>
+</div>
+
 </section>
 
-    </main>
+<div class="guestbook">
+    <div class="section-heading">
+        <p class="eyebrow">ENGINEERING GUESTBOOK</p>
+        <h3>Leave a professional note.</h3>
+        <p>
+            Comments are reviewed before appearing publicly.
+        </p>
+    </div>
 
+    <form id="guestbook-form" class="guestbook-form">
+        <label>
+            Name
+            <input
+                type="text"
+                id="guestbook-name"
+                name="name"
+                minlength="2"
+                maxlength="60"
+                required
+            >
+        </label>
+
+        <label>
+            Comment
+            <textarea
+                id="guestbook-comment"
+                name="comment"
+                minlength="5"
+                maxlength="500"
+                required
+            ></textarea>
+        </label>
+
+        <button type="submit" class="button primary">
+            Submit Comment
+        </button>
+
+        <p id="guestbook-status" class="guestbook-status"></p>
+    </form>
+
+    <div class="guestbook-comments">
+        <h4>Approved Comments</h4>
+        <div id="guestbook-list"></div>
+    </div>
+</div>
+
+    </main>
+<script src="js/app.js"></script>
 </body>
 </html>
