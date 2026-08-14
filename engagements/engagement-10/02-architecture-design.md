@@ -433,3 +433,85 @@ It reduces the blast radius when something goes wrong.
 Narrow IAM policies require more deliberate design and may require updates as application capabilities evolve.
 
 That additional effort is acceptable because permissions should expand only when the business responsibility expands.
+
+## Architecture Decision 07 — Request Protection and Abuse Controls
+
+### Business Capability
+
+The portfolio contains publicly accessible endpoints, including an Engineering Guestbook that allows visitors to submit data.
+
+Public interaction should remain available to legitimate users without allowing abusive traffic to unnecessarily consume backend resources.
+
+### Technical Requirement
+
+The platform requires controls capable of:
+
+* Inspecting incoming web requests
+* Blocking known malicious patterns
+* Reducing automated abuse
+* Limiting excessive request rates
+* Protecting backend compute and database resources
+* Reducing unnecessary cost caused by unwanted traffic
+
+### Design Decision
+
+**AWS WAF will provide request filtering at the public application edge where appropriate.**
+
+The CloudFront distribution will be protected by a WAF web ACL.
+
+The API layer will also receive request protection appropriate to its exposure and API type.
+
+Rate-based controls will be used to detect and restrict clients generating excessive request volume.
+
+API Gateway throttling will provide an additional control against request bursts reaching backend compute.
+
+### Defense in Depth
+
+Request protection will use multiple layers with different responsibilities.
+
+**TLS → Protects communication in transit**
+
+**AWS WAF → Inspects and filters web requests**
+
+**API Gateway throttling → Controls request rate and burst volume**
+
+**Lambda validation → Determines whether application data satisfies business rules**
+
+**IAM → Limits what backend workloads are authorized to access**
+
+These controls are complementary rather than interchangeable.
+
+### Abuse Scenario
+
+Consider a client attempting to submit thousands of guestbook entries in a short period.
+
+The desired architecture is:
+
+**Internet → WAF → API Gateway → Lambda → DynamoDB**
+
+Abusive traffic should be rejected as early as practical.
+
+Preventing unnecessary requests from reaching Lambda and DynamoDB reduces:
+
+* Backend processing
+* Database operations
+* Application noise
+* Potential resource exhaustion
+* Unnecessary cloud cost
+
+### Architectural Principle
+
+> Reject unwanted work before expensive or sensitive components are asked to perform it.
+
+Security controls should reduce both technical risk and unnecessary resource consumption.
+
+### Tradeoff
+
+Request filtering and throttling introduce additional configuration and require careful tuning.
+
+Controls that are too permissive may fail to stop abuse.
+
+Controls that are too restrictive may reject legitimate users.
+
+Rate limits and WAF rules should therefore be based on expected application behavior and adjusted using observed traffic.
+
