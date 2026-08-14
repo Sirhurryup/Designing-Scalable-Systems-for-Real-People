@@ -148,3 +148,98 @@ API Gateway was then tested independently before browser integration.
 
 This reduced troubleshooting scope and made the source of failure easier to identify.
 
+## Engineering Guestbook Submission
+
+A second dynamic capability was added to the portfolio to allow visitors to submit professional guestbook comments.
+
+### DynamoDB
+
+A table named `portfolio-guestbook` was created using on-demand capacity.
+
+Partition key:
+
+`comment_id`
+
+Each guestbook item contains:
+
+* `comment_id`
+* `name`
+* `comment`
+* `created_at`
+* `status`
+
+New submissions default to:
+
+`status = pending`
+
+### Lambda Validation
+
+The `portfolio-guestbook-submit` Lambda function accepts only visitor-controlled fields:
+
+* `name`
+* `comment`
+
+Lambda generates and controls:
+
+* `comment_id`
+* `created_at`
+* `status`
+
+Validation rules are applied before any database write occurs.
+
+### Least-Privilege IAM
+
+The guestbook Lambda execution role was granted only:
+
+`dynamodb:PutItem`
+
+against:
+
+`portfolio-guestbook`
+
+This keeps the guestbook function's blast radius limited to its business responsibility.
+
+### API Gateway
+
+The existing `portfolio-api` was extended with:
+
+`POST /comments`
+
+The route integrates with:
+
+`portfolio-guestbook-submit`
+
+### Verification
+
+A request was submitted from an external client.
+
+Observed response:
+
+```json
+{
+  "message": "Comment submitted for review.",
+  "comment_id": "generated-id"
+}
+```
+
+The new DynamoDB record was verified with:
+
+* the submitted name
+* the submitted comment
+* a generated identifier
+* a server-generated timestamp
+* `status = pending`
+
+### Status
+
+**PASS**
+
+The complete submission path is verified:
+
+**Client → API Gateway → Lambda Validation → IAM Authorization → DynamoDB**
+
+### Principle Reinforced
+
+> Public input is proposed by the client. Authoritative application state is established by trusted backend logic.
+
+
