@@ -260,6 +260,113 @@
 
 </section>
 
+<section class="live-architecture" aria-labelledby="live-architecture-heading">
+
+    <div class="section-heading">
+        <p class="eyebrow">LIVE CLOUD ARCHITECTURE</p>
+
+        <h2 id="live-architecture-heading">
+            You are currently using one of the systems documented in this portfolio.
+        </h2>
+
+        <p>
+            docdott.com is delivered through a production-style AWS architecture
+            designed around secure delivery, managed services, persistent state,
+            observability, and cost awareness.
+        </p>
+    </div>
+
+    <div class="architecture-stack">
+
+        <div class="architecture-layer">
+            <span class="layer-label">IDENTITY</span>
+            <h3>Route 53</h3>
+            <p>Resolves docdott.com to the public delivery layer.</p>
+        </div>
+
+        <div class="stack-arrow" aria-hidden="true">↓</div>
+
+        <div class="architecture-layer">
+            <span class="layer-label">DELIVERY</span>
+            <h3>CloudFront</h3>
+            <p>Provides HTTPS delivery, edge caching, and controlled origin access.</p>
+        </div>
+
+        <div class="stack-arrow" aria-hidden="true">↓</div>
+
+        <div class="architecture-layer">
+            <span class="layer-label">STATIC ORIGIN</span>
+            <h3>Private Amazon S3</h3>
+            <p>Stores the portfolio assets while blocking direct public access.</p>
+        </div>
+
+    </div>
+
+    <div class="backend-heading">
+        <p class="eyebrow">APPLICATION PATH</p>
+        <h3>Dynamic features use a separate serverless path.</h3>
+    </div>
+
+    <div class="backend-flow">
+
+        <div class="backend-service">
+            <span>01</span>
+            <h4>Browser</h4>
+            <p>JavaScript sends application requests.</p>
+        </div>
+
+        <div class="backend-arrow" aria-hidden="true">→</div>
+
+        <div class="backend-service">
+            <span>02</span>
+            <h4>API Gateway</h4>
+            <p>Receives and routes API requests.</p>
+        </div>
+
+        <div class="backend-arrow" aria-hidden="true">→</div>
+
+        <div class="backend-service">
+            <span>03</span>
+            <h4>Lambda</h4>
+            <p>Validates requests and executes application logic.</p>
+        </div>
+
+        <div class="backend-arrow" aria-hidden="true">→</div>
+
+        <div class="backend-service">
+            <span>04</span>
+            <h4>DynamoDB</h4>
+            <p>Persists visitor and guestbook state.</p>
+        </div>
+
+    </div>
+
+    <div class="architecture-controls">
+
+        <div>
+            <strong>AWS WAF</strong>
+            <span>Request protection</span>
+        </div>
+
+        <div>
+            <strong>IAM</strong>
+            <span>Least-privilege authorization</span>
+        </div>
+
+        <div>
+            <strong>CloudWatch</strong>
+            <span>Operational visibility</span>
+        </div>
+
+        <div>
+            <strong>AWS Budgets</strong>
+            <span>Financial guardrails</span>
+        </div>
+
+    </div>
+
+</section>
+
     </main>
 
 </body>
