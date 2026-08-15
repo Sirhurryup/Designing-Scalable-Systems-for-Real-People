@@ -142,3 +142,133 @@ The existing budget controls were preserved rather than duplicated.
 
 > Financial controls should provide useful decision points, not duplicate alerts for the sake of additional configuration.
 
+
+## Security and Operational Verification
+
+### AWS WAF
+
+The production CloudFront distribution was verified to have AWS WAF core protections enabled.
+
+Observed production telemetry demonstrated that the control was actively evaluating traffic rather than existing only as configuration.
+
+During the observed 24-hour period:
+
+- approximately 1,200 requests were processed
+- approximately 1,100 requests were blocked
+- 78 requests were allowed
+- blocked traffic included requests with no user agent and known malicious bot activity
+
+This provided operational evidence that unwanted traffic was being evaluated and blocked at the edge before reaching the origin.
+
+**Status: PASS**
+
+---
+
+### CloudWatch Production Dashboard
+
+A production dashboard was created:
+
+`eng10-portfolio-production`
+
+The dashboard provides visibility across the application path.
+
+#### CloudFront
+
+Monitors:
+
+- requests
+- 4xx error rate
+- 5xx error rate
+
+#### API Gateway
+
+Monitors:
+
+- request count
+- 4xx responses
+- 5xx responses
+
+#### Lambda
+
+Monitors the visitor-counter workload through:
+
+- invocations
+- errors
+- average duration
+
+#### DynamoDB
+
+Monitors capacity consumption for:
+
+- `portfolio-metrics`
+- `portfolio-guestbook`
+
+The dashboard was saved and verified after refresh to confirm that the configuration persisted.
+
+**Status: PASS**
+
+---
+
+### CloudWatch Alarm
+
+A CloudWatch alarm was created for:
+
+`portfolio-visitor-counter`
+
+Alarm:
+
+`eng10-portfolio-lambda-errors`
+
+Condition:
+
+`Errors >= 1 within a 5-minute period`
+
+Missing data is treated as non-breaching because an idle portfolio does not represent an application failure.
+
+The alarm transitions through:
+
+**Lambda Error → CloudWatch Alarm → SNS → Email Notification**
+
+Healthy production traffic was generated and the alarm subsequently entered the `OK` state.
+
+**Status: PASS**
+
+---
+
+### Resource Governance
+
+Production resources were tagged using:
+
+`Project = Engagement-10`
+
+`Environment = Production`
+
+Human-readable naming was also applied where appropriate.
+
+This addressed an operational issue discovered during WAF inspection: resources that cannot be quickly associated with a workload increase troubleshooting and governance friction.
+
+### Principle Reinforced
+
+> Resources should be identifiable by workload, not by memory.
+
+---
+
+## Operational Acceptance
+
+The production workload now demonstrates:
+
+- edge protection
+- private origin access
+- encrypted HTTPS delivery
+- application telemetry
+- error monitoring
+- proactive alerting
+- persistent application state
+- moderated public input
+- financial guardrails
+- workload identification through tagging
+
+The architecture is not only deployed. It is observable, protected, governed, and operationally supportable.
+
+**Operational Status: PASS**
+
