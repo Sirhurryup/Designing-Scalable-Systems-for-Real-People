@@ -120,3 +120,25 @@ The following capabilities were verified through the live application:
 > A system is not complete when the components work independently. It is complete when the intended user path works through the assembled architecture.
 
 Production verification converts architecture claims into operational evidence.
+
+## Cost Guardrail Verification
+
+Existing AWS Budgets were reviewed before creating any additional financial controls.
+
+Two active cost guardrails are already configured:
+
+* `$3` budget
+* `$15` budget
+
+These existing thresholds provide early and secondary notification points for unexpected AWS spending.
+
+An additional Engagement 10 budget was not created because the existing controls already satisfy the requirement for financial visibility.
+
+### Engineering Decision
+
+The existing budget controls were preserved rather than duplicated.
+
+### Principle Reinforced
+
+> Financial controls should provide useful decision points, not duplicate alerts for the sake of additional configuration.
+
