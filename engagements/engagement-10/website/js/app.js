@@ -1,5 +1,5 @@
 const API_BASE =
-    "https://2v6w289860.execute-api.us-east-1.amazonaws.com";
+    "https://i22bicrcgi.execute-api.us-east-1.amazonaws.com";
 
 const visitorCountElement = document.getElementById("visitor-count");
 const guestbookForm = document.getElementById("guestbook-form");
