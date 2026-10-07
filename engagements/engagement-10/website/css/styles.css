@@ -623,3 +623,134 @@ main {
     color: var(--text-muted);
     font-size: 1.05rem;
 }
+
+/* ========================================
+   CLOUD ENGINEERING CHALLENGE
+======================================== */
+
+.challenge {
+    min-height: 100vh;
+    padding: 6rem 1.5rem;
+}
+
+.challenge-container {
+    width: min(1000px, 100%);
+    margin: 0 auto;
+}
+
+.challenge-header {
+    margin-bottom: 3rem;
+}
+
+.challenge-label {
+    margin-bottom: 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.challenge-header h1 {
+    margin-bottom: 1rem;
+    font-size: clamp(2.25rem, 6vw, 4rem);
+    line-height: 1;
+}
+
+.challenge-intro {
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.quiz {
+    padding-top: 2rem;
+    border-top: 1px solid currentColor;
+}
+
+.quiz-progress {
+    margin-bottom: 2rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.quiz-question {
+    margin-bottom: 2rem;
+    font-size: 1.25rem;
+    line-height: 1.7;
+}
+
+.quiz-options {
+    display: grid;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.quiz-option {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    padding: 1rem;
+    border: 1px solid currentColor;
+    cursor: pointer;
+}
+
+.quiz-option input {
+    margin-top: 0.25rem;
+}
+
+.quiz-feedback {
+    margin: 1.5rem 0;
+    padding: 1rem 0;
+    line-height: 1.7;
+    border-top: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+}
+
+#quiz-action {
+    padding: 0.85rem 1.4rem;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.quiz-result {
+    padding-top: 3rem;
+    border-top: 1px solid currentColor;
+}
+
+.quiz-score {
+    margin: 0 0 1.5rem;
+    font-size: clamp(3rem, 8vw, 5rem);
+    font-weight: 700;
+    line-height: 1;
+}
+
+.quiz-result h2 {
+    margin: 0 0 1rem;
+    font-size: 1.75rem;
+}
+
+.quiz-result > p {
+    margin: 0 0 2rem;
+    line-height: 1.7;
+}
+
+.quiz-home-link {
+    display: inline-block;
+    padding: 0.85rem 1.4rem;
+    border: 1px solid currentColor;
+    text-decoration: none;
+}
+
+.challenge-callout {
+    margin-top: 3rem;
+    padding: 2rem 0;
+    border-top: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+}
+
+.challenge-callout > p:not(.eyebrow) {
+    max-width: 850px;
+    margin: 1rem 0 1.5rem;
+    line-height: 1.7;
+}
+
