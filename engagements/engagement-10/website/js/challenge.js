@@ -1,103 +1,122 @@
 const questions = [
     {
         question: `
-            An EC2 web server has a Public IPv4, a Security Group allowing
-            TCP/443, a web service listening on port 443, and an allowing NACL.
-            Clients on the Internet still time out.
+            You're troubleshooting an application hosted on EC2.
 
-            The subnet's associated route table contains only:
-            10.10.0.0/16 → local
+            From your laptop, a TCP connection to port 443
+            times out.
 
-            An Internet Gateway is attached to the VPC.
+            A colleague says, "The Security Group is broken."
+
+            What does the evidence actually establish?
 
             What is the smallest architectural repair?
         `,
         options: [
-            "Add 0.0.0.0/0 → IGW to the subnet's associated route table.",
-            "Add 0.0.0.0/0 to the Security Group.",
-            "Restart the web service.",
-            "Replace the EC2 public IPv4."
-        ],
-        answer: 0,
-        feedback:
-            "The Internet Gateway exists, but the subnet has no route telling Internet-bound traffic to use it. Adding 0.0.0.0/0 → IGW repairs the path."
-    },
-    {
-        question: `
-            A private application server needs to download operating-system
-            updates from the Internet, but it must not accept
-            Internet-initiated connections.
-
-            Which architecture fits?
-        `,
-        options: [
-            "Give the instance a public IPv4 and open its Security Group.",
-            "Private subnet → NAT Gateway → public subnet → IGW.",
-            "Private subnet → IGW directly.",
-            "Add 0.0.0.0/0 inbound to its NACL."
-        ],
-        answer: 1,
-        feedback:
-            "A NAT Gateway gives the private tier outbound Internet capability without making the instance directly Internet-addressable."
-    },
-    {
-        question: `
-            Your subnet has the correct route to the Internet Gateway.
-            The Security Group permits TCP/443 and the application is
-            listening on port 443.
-
-            The subnet's NACL allows inbound TCP/443 but blocks the necessary
-            return traffic.
-
-            Which property explains the failure?
-        `,
-        options: [
-            "Security Groups are stateless.",
-            "Route tables control return traffic permissions.",
-            "NACLs are stateless and evaluate each direction independently.",
-            "The Internet Gateway requires an inbound rule."
+            "The Security Group is definitely blocking traffic.",
+            "The application process has crashed.",
+            "TCP connectivity was not established; the cause still needs investigation.",
+            "The server accepted the connection but rejected the request."
         ],
         answer: 2,
         feedback:
-            "NACLs are stateless, so inbound and outbound traffic are evaluated independently. Security Groups, by contrast, are stateful."
+            "A timeout tells us the TCP connection wasn't established. It doesn't identify the cause by itself. Routing, filtering, addressability, and other conditions still need investigation."
+
+    },
+    {
+        question: `
+            You update the access rules and test again.
+
+            This time, your laptop reports:
+            Connection refused.
+
+            On the EC2 instance, ss -tlnp shows
+            no process listening on port 443.
+
+            What should you investigate next?
+        `,
+        options: [
+            "Replace the Internet Gateway.",
+            "Investigate why the expected service isn't listening.",
+            "Add another public IPv4 address.",
+            "Rebuild the VPC."
+        ],
+        answer: 1,
+        feedback:
+            "The refusal, combined with the absence of a listener, directs the investigation toward the service. Check its status, configuration, and logs before making changes."
+    },
+    {
+        question: `
+            Now the service is listening.
+
+            Your laptop establishes TCP connectivity
+            to port 443 successfully.
+
+            But an HTTP request returns:
+            503 Service Unavailable.
+
+            A developer insists the Security Group
+            must still be broken.
+
+            What's your next move?
+        `,
+        options: [
+           "Open every port in the Security Group.",
+            "Replace the route table.",
+            "Assume the EC2 instance is healthy because TCP succeeded.",
+            "Investigate the HTTP-serving component, application logs, and dependencies."
+        ],
+        answer: 3,
+        feedback:
+            "TCP connectivity succeeded and an HTTP-speaking component returned 503. That moves the investigation toward service availability and dependencies. Connectivity alone doesn't prove application health."
     },
     {
         question: `
             An engineer says:
 
-            "The subnet is named production-public-subnet, so we know it's public."
+             An EC2 instance has a public IPv4 address.
+            Its Security Group allows TCP/443.
+            The web service is listening.
 
-            What evidence actually proves the subnet is public in this IPv4 architecture?
+            The VPC has an Internet Gateway attached.
+
+            But the subnet's associated route table
+            contains only:
+            10.10.0.0/16 → local
+
+            What configuration is missing?
         `,
         options: [
-            "Its name contains public.",
-            "Its NACL allows Internet traffic.",
-            "Its associated route table has 0.0.0.0/0 → IGW.",
-            "An EC2 instance inside it has a Security Group."
+            "A default route, 0.0.0.0/0 → IGW, in the associated route table.",
+            "A second Security Group.",
+            "A different Linux process.",
+            "A larger subnet CIDR."
         ],
-        answer: 2,
+        answer: 0,
         feedback:
-            "Names describe intent. Configuration proves architecture. The route to the Internet Gateway is the evidence that establishes the subnet's Internet path."
+            "An attached Internet Gateway doesn't automatically create a usable Internet route. The subnet's associated route table must direct Internet-bound IPv4 traffic toward the IGW."
     },
     {
         question: `
-            An engineer tells you:
+            You're leading an incident.
 
-            "The network is broken because users can't reach the application."
+            Users report that the application is down.
+            One engineer wants to restart the service.
+            Another wants to change the Security Group.
 
-            You have no evidence yet.
+            Neither has collected evidence.
 
-            What is your best first response?
+            What should happen first?
         `,
         options: [
-            "Check the Security Group because that's the most common AWS problem.",
-            "Restart the application and see whether it recovers.",
-            "Determine the failure boundary by collecting evidence through the request path.",
-            "Inspect the route table because networking starts with routing."
+            "Restart the service because it's the fastest possible fix.",
+            "Change the Security Group because networking is the foundation.",
+            "Trace the request path, establish the failure boundary, and collect evidence.",
+            "Rebuild the application so the problem can't happen again."
         ],
         answer: 2,
         feedback:
-            "Start with evidence, not a favorite AWS service. Establish the failure boundary through the request path before changing the system."
+            "Good incident response begins by identifying what is known and what remains uncertain. Evidence helps isolate the failure boundary and reduces unnecessary changes."
     }
 ];
 
